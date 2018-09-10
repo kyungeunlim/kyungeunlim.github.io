@@ -19,9 +19,6 @@
     <!-- Custom styles for this template -->
     <!--<link href="{{ url_for('static', filename='css/starter-template.css') }}" rel="stylesheet">-->
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="static/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,8 +45,7 @@
             <li class="active"><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/projects">Projects</a></li>
-	    <li><a href="/research">Research</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="/blogs">Blogs</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -61,10 +57,10 @@
 
       <div class="starter-template">
         <h1>Welcome to Kyungeun's Webpage!</h1>
-        <p class="lead">{{title}} - microblog</p>
+        <!--<p class="lead">{{title}} - microblog</p>-->
         <!--<p class="lead">Hello, {{user.nickname}}!</p>-->
         <p class="lead">Working<br> </p>
-	<img src="{{url_for('static', filename='lim-profile_zoom.jpg')}}" width="100px" />
+	<img src="static/lim-profile_zoom.jpg" width="100px">
       </div>
 
       
