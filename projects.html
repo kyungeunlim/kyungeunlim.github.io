@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Wave Machine</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="static/css/bootstrap.css">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+         <!-- <a class="navbar-brand" href="#">Project</a> -->
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li> 
+            <li clas="active"><a href="/projects">Projects</a></li> 
+            <li><a href="/posts">Posts</a></li> 
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+<br><br>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>Wave Machine: Determining the sea conditions for cargo ships</h1>
+
+	<h2>Project Description</h2>
+	<p class ="lead"> This project aims to extract the sea
+	conditions that a cargo ship is experiencing using time series
+	data from 4 different draft sensors installed in the ship. The
+	draft sensors provide water depth information at each position
+	of the ship where the corresponding sensor is
+	installed. Currently the sea conditions are daily reported by
+	the captain, and the goal of this project is to build a model
+	to automate the captain's report on the sea conditions using the
+	draft sensor data.</p>
+
+	<p class ="lead">This information on the sea conditions would
+	eventually allow a maritime consulting company to make
+	suggestions for how the ship can burn less fuel. </p>
+
+	<h2>1. What are the sea conditions?</h2>
+        <p class="lead"> The sea conditions are determined by two
+        parameters, Swell and Sea State. Swell is given by large wave
+        structure (imagine there's a hurricane far away and a big wave
+        propagates to where the ship is). Sea state is about the
+        choppiness of the water surface where the ship is. For
+        example, local wind can generate ripples at the sea surface
+        around the ship and it can change the Sea State. Fig. 1 shows
+        a cartoon describing the Swell and Sea State shown in red in
+        blue, respectively. A Swell wave roughly consists of Sea State
+        waves. Swell is described by both length (red horizontal
+        arrow) and height (red vertical arrow) of the wave, while Sea
+        State is determined only by the height (blue vertical
+        arrow). </p>
+
+	<figure class="centered_image">
+	  <center>
+	  <img src="{{url_for('static', filename='sea_conditions.png')}}" width="1000px" >
+	  </center>
+	  <figcaption>Fig 1. A ship on the sea. The red big wave
+	  indicates the Swell state of the sea while the blue small
+	  wave indicates the "Sea State" of the sea. There are 4
+	  sensors located at the forward (red), middle (green, only
+	  one of them is shown in the figure), and aft (blue). </figcaption>
+	</figure>
+
+	<br>
+	<p class ="lead"> The captain on the ship reports the sea
+	conditions with daily the codes on both Swell and Sea
+	State. For example, the captain could report the Swell and Sea
+	State as "04 MODERATE SWELL Height, AVERAGE Length" and "03
+	SLIGHT Sea State Height".
+	</p>
+
+	<p class ="lead"> Using the data from the draft sensors,
+	located at forward, middle, and aft (shown as red, green, and
+	blue boxes in Fig 1.), we want to reconstruct the wave
+	structure for both Swell and Sea State. By correlating the
+	wave information obtained from the draft sensors to the
+	captain's daily report at a given time, we wish to build a
+	model to determine the sea state with the Swell and Sea State
+	codes.
+	</p>
+	
+	<h2>2. Data Challenges and Solutions</h2>
+	<h3>2.1. Challenges </h3>
+        <p class="lead"> The first thing to verify is whether we
+          can see a wave structure from the draft sensor readings.
+          However, as shown in Fig. 2, it is not possible to see any
+          wave-like structure from the draft sensors. We need to think
+          of other features which reflect the sea conditions rather
+          than try to fully reconstruct the wave.</p>
+
+	<figure class="centered_image">
+	  <center>
+	  <img src="{{url_for('static', filename='draft_sensor_with_wave.png')}}" width="500px" >
+	  </center>
+	  <figcaption>Fig 2. 60 seconds of the forward draft sensor
+	    reading (light blue dots) and possible wave with a
+	    wavelength of 200 m (dark blue solid line). The sampling
+	    frequency for the sensor data is ~ 1 S/s.  As shown in
+	    this example, no obvious wave like structure is
+	    shown. </figcaption>
+	</figure>
+	<br>
+	<p class ="lead">
+	Another challenge is the very small number of captain's daily
+	reports. The captain's daily log is available from April 14,
+	2017, and only two months of data has been accumulated as of
+	Jun 25, 2017. In addition, the dataset has to be split into
+	two cases depending on the cargo conditions. When a cargo ship
+	is not loaded with cargo and in the "ballast" state, the
+	ship's weight is about two times lighter and the draft sensors
+	yield smaller water depth values.  Also, in the ballast state,
+	the ship is tilted (cargo is loaded at the aft of the ship)
+	and the forward sensor is always reading a higher value than
+	the aft sensor. In total, we have 32 and 21 captain's log
+	available for the ballast and laden (the ship is fully loaded
+	with cargo) states, respectively. Even if we choose the
+	ballast state, these 32 data points are spread into 5 (4)
+	categories for Swell (Sea State) codes as shown in Fig 3. We
+	do not have any data avaialble with more extreme conditions
+	with higher code values.
+	</p>
+	
+	<figure class="centered_image">
+	  <center>
+	  <img src="{{url_for('static', filename='ch1_ballast_swell_sea_state.png')}}" width="800px" >
+	  </center>
+	  <figcaption>Fig 3. Swell and Sea State codes for the
+	  ballast state. 32 data points are spread into 5 (4) different
+	  categories for Swell (Sea State) codes. </figcaption>
+	</figure>
+
+	<h3>2.2. Solutions</h3>
+	<p class ="lead"> To tackle the challenge that the draft
+	sensor did not exhibit wave-like structure, I designed a
+	feature which could be sensitive to sea conditions.  The most
+	natural guess was that when the sea condition is extreme, the
+	ship will be shakier and the draft sensor value itself will
+	fluctuate more. Indeed the data supported this guess. Also,
+	given that the ship is tiled in the ballast state, the
+	difference between two sensors, especially between forward and
+	aft sensors, would be most sensitive to any fluctuation of the
+	ship. Therefore, I came up with a feature defined as the
+	standard deviation of the difference between forward and aft
+	sensors, normalized by the mean of the differnece. To obtain
+	the standard deviation and the mean, I merged the samples
+	within 150 seconds. I assumed that the sea condition stayed
+	the same within two hours (which gives me 48 data points) and
+	took the mean of the distribution as the feature.</p>
+
+	<p class ="lead"> The second thing I did was reframe the
+	problem as a binomial logistic regression problem (sea is calm
+	or moderate) rather than a multinomial logistic regression
+	problem (swell codes ranges from 0 to 4). Some of the
+	categories have only one or two entries and 32 data points are
+	not enough to perform multinomial logistic regression. </p>
+
+	<p class ="lead"> Lastly, I decided to use probablistic
+	programming using Bayesian inference for this specific
+	problem. Rather than divide the datasets into training and
+	test datasets, using all the data to build the model and
+	verify it with Monte Carlo simultion based on the posterior
+	seemed to be a better approach. In addition, this method
+	provides not only the probability that the sea is moderate but
+	also the associated uncertainty of the probability. With
+	limited statistics, I think it is more important to provide
+	proper uncertainty of the classification. </p>
+	
+	<h2>3. Model</h2>
+	<h3> 3.1 The sea is calm or moderate? </h3>
+	<p class ="lead">
+	Once we reframe the problem as a binomial logistic regression
+	problem, we can describe the probability of the sea being
+	moderate as a function of the feature described in Section
+	2.2. I used the PyMC3 package and used the Metropolis-Hasting
+	algorithm to obtain the posterior distribution of the two
+	coefficients in the logisitc function.
+
+	Fig 4. shows the data points (shown as gray dots) along with
+	the average posterior (shown as a blue line), and two specific
+	cases of obtained posterior selections after burning
+	a million samples. The blue line is the deliverable of this
+	project!</p>
+
+	<figure class="centered_image">
+	  <center>
+	  <img src="{{url_for('static', filename='ch3_average_posterior.png')}}" width="800px" >
+	  </center>
+	  <figcaption>Fig 4. The probability of the sea being moderate
+	  as a function of the feature described in Sec. 2.2. Gray dots,
+	  blue line, green and red dashed lines indicate the data
+	  points, the logistic function obtained from the average
+	  posterior, and two cases obtained from the posterior
+	  distribution, respectively. </figcaption>
+	</figure>
+
+	<h3> 3.2 How good was the Markov Chain Monte Carlo sampling? </h3>
+	<p class ="lead">
+	To obtain reasonable posterior distributions, I have generated
+	1000000 samples, burned 150000 of them, and used a thin of
+	10. As shown in Fig. 5, the optimization of the posterior
+	obtainment was successful (no discrete structure in both
+	posterior distributions as well as trace evolution.) </p>
+	
+	<figure class="centered_image">
+	  <center>
+	  <img src="{{url_for('static', filename='ch3_traceplots.png')}}" width="800px" >
+	  </center>
+	  <figcaption>Fig 5. Trace plots to obtain the posterior distributions. </figcaption>
+	</figure>
+
+	<h3> 3.3 What is the uncertainty on the probability of
+	  determining the sea conditions? </h3>
+	<p class ="lead">
+	Since we have the posterior distributions on the model, we can
+	also obtain the associate uncertainty on the probability of
+	the sea being moderate. Fig 6 shows 95% Confidence Interval
+	(C.I.) of the probability with purple band. C.I. means 95% of
+	the posterior distribution lies within the band. As shown in
+	the figure, we can be certain that the sea is calm where the
+	feature value is below 0.06, as well as above 0.14 the sea is
+	moderate. However, at the value around 0.11, the C.I. provides
+	wildy varying values from ~ 0.02 to 1, while the probability
+	of being in the moderate state is 0.8. Basically we are not
+	able to robustly classify the sea condition as calm or
+	moderate when the observed feature value lies between 0.10 and
+	0.12. </p>
+	
+	<figure class="centered_image">
+	  <center>
+	  <img src="{{url_for('static', filename='ch3_prob_ci.png')}}" width="800px" >
+	  </center>
+	  <figcaption>Fig 6. 95% Confindence Interval (C.I.) of the
+	  probability estimate of the sea being
+	  moderate. </figcaption>
+	</figure>
+
+	<h3> 3.4 How good is the model? </h3>
+	<p class ="lead">
+	  To verify that the model is good, we can generate an
+	  aritificial dataset using the info obtained from the
+	  posterior and make a comparison with the observations we
+	  have. The idea here is that if the simulated data is not
+	  similar to the observation statistically, our model does not
+	  represent the data correctly. We can think that the
+	  observation is a specific case of the posterior
+	  distributions and see how probable it is statistically. </p>
+
+	<p class="lead"> Fig 7. shows three models to get an idea
+	about how good our model (top) is.  For each model, we
+	calculate the proportion of times the posterior simulation is
+	a value of 1 for a particular feature value. It gives the
+	posterior probability of the sea being moderate at each data
+	point. If we sort them by the posterior probability, we obtain
+	the plot where the occurence of the sea being moderate is
+	indicated as a blue box and the probability of the sea being
+	moderate is shown as a horizontal black line, while the
+	vertical line shows the threshold separating calm and moderate
+	conditions. This separation plot also allows the user to see
+	how the total number of events predicted by the model compares
+	to the actual number of events in the data.</p>
+
+	<p class="lead">
+	  The perfect model would predict the sea being moderate with
+	probability 1 for the occurence of the sea being moderate and
+	0 for the sea being calm as shown in the middle plot of Fig
+	7. For random probability distribution for the sea being
+	moderate, it will just randomly occur at any probability
+	order. As we can see in Fig 7, the feature-dependent model
+	yields the occurence of the sea being moderate correctly right
+	to the separation line.</p>
+	
+	<figure class="centered_image">
+	  <center>
+	  <img src="{{url_for('static', filename='ch3_model_verification.png')}}" width="800px" >
+	  </center>
+	  <figcaption>Fig 7. Separation plots for the model obtained
+	  in Sec. 3.1 (top), the perfect model (middle), and the
+	  random probability model (bottom). </figcaption>
+	</figure>
+
+	<h3> 3.5 What could be improved? </h3>
+	<p class ="lead">
+	There are several things that could be improved for the current
+	analysis but the main requirement is having more data in the
+	Captain's log. We could consider increasing the corresponding
+	data points for each captain's log by having multiple values
+	for the feature mentioned in Sec. 2.2. by enlarging the time window
+	and separating different time slots (e.g., instead
+	of looking at 1 feature value obtained within 2 hours, we
+	could obtain 3 values with a 1 hour separation in 3
+	hours). However, given that we are already using the mean
+	behavior of the feature within a certain time window, it would
+	not change the probability distribution function significantly
+	with the current Bayesian approach. It might be more suitiable
+	for the other approaches such as random forest and could be
+	interesting to compare the results. </p>
+
+	<p class ="lead">
+	Once we have more data we could go back and try to perform
+	multinomial logistic regression. In addition to multinomial
+	logistic regression, we could consider ordinal regression
+	too.</p>
+
+	<p class ="lead">
+	  Lastly, given that we did not observe any wave structure
+	  with the existing sensors, it could be worth taking data
+	  with other types of sensors. One of the limitations of the
+	  current sensor data comes from the fact that the ship
+	  dimension is often larger than the Swell wave length and it
+	  would not be easy to see the smaller structure. It might be
+	  more useful to have a small vessel instrumented with the
+	  sensors which could see the wave structure for both Swell
+	  and Sea State. Also, we can think of completely different
+	  types of sensors such as gyroscopes or image processing of
+	  a sattelite image of the sea around the ship.
+	</p>
+	
+	<h2>4. Business Applications</h2>	
+        <p class="lead"> The model used for this analysis can be
+        applied to any problem with small labeled data for
+        classification. For example, it can be used to determine
+        car failure rate using the sensor reading on the car. Another
+        use could be to determine health insurance plans for rare
+        diseases. Startup company marketing advice with limited
+        initial statistics could be an application too.</p>
+
+	<h3>Acknowledgement</h3>	
+        <p class="lead"> This project was done in collobration with
+	  Nautilus Labs, a maritime consulting company. Nautilus Labs
+	  aims to make data-driven advices on the ship operation to
+	  reduce not only the cost but also the air pollution through
+	  less fuel burning, which has significant impact on
+	  both global economy and environment. Details on Nautilus
+	  Labs can be found <a href="https://nautiluslabs.co/"
+	  target="_blank">here</a>. I would like to thank Brian and
+	  Anthony for providing the data and knoweldge of the ship,
+	  and Daniel for the mentorship. </p>
+      </div>      
+
+      
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> 
+<script src="static/js/bootstrap.min.js"></script> 
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
