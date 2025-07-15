@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Home</title>
+    <title>About - Kyungeun Lim</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="static/css/bootstrap.css">
@@ -17,6 +17,29 @@
     <link href="{{ url_for('static', filename='css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
+    <style>
+      .more-info-section {
+        text-align: center;
+      }
+      .bullet-item {
+        margin: 12px 0;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+      .more-info-section a {
+        text-decoration: none;
+        color: #0066cc;
+      }
+      .more-info-section a:hover {
+        text-decoration: underline;
+      }
+      .icon {
+        font-size: 18px;
+      }
+    </style>
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--<script src="static/js/ie-emulation-modes-warning.js"></script>-->
@@ -63,34 +86,70 @@
         <!--<p class="lead">Hello, {{user.nickname}}!</p>-->
         <p class="lead">
 	  <div class="row">
-	    <div class="col-md-2"><img src="static/lim-profile_zoom.jpg" width="180px"/>
+	    <div class="col-md-2">
+	      <img src="static/lim-profile_zoom.jpg" width="180px"/>
 	      <br>
 	      <br>
-              <h3>More Info</h3>
-              <!--<p class="lead">{{title}} - microblog</p> -->
-              <!--<p class="lead">Hello, {{user.nickname}}!</p>-->
-	          <h4><a href="https://www.linkedin.com/in/kyungeun-lim" target="_blank"> LinkedIn</a></h4>
-	          <h4><a href="https://github.com/kyungeunlim" target="_blank"> GitHub</a></h4>
-	          <h4><a href="https://scholar.google.com/citations?user=bGdDHjcAAAAJ&hl=en"
-		       target="_blank">Google Scholar (Publications) </a><h4>
-	          <h4><a href="https://yale-csm.symplicity.com/profiles/kyungeun.lim"
-		       target="_blank"> Yale Simplicity</a></h4>		  
-		  <h4><a href="https://academiccommons.columbia.edu/catalog/ac:156964"
-			 target="_blank">Dissertation</a></h4>
+	      <div class="more-info-section">
+	       <!-- <h3>More Info</h3> -->
+	        <div class="bullet-item">
+	          <span class="icon">💼</span>
+	          <a href="https://www.linkedin.com/in/kyungeun-lim" target="_blank">LinkedIn</a>
+	        </div>
+	        <div class="bullet-item">
+	          <span class="icon">💻</span>
+	          <a href="https://github.com/kyungeunlim" target="_blank">GitHub</a>
+	        </div>
+	        <div class="bullet-item">
+	          <span class="icon">📚</span>
+	          <a href="https://scholar.google.com/citations?user=bGdDHjcAAAAJ&hl=en" target="_blank">Google Scholar (Publications)</a>
+	        </div>
+	        <div class="bullet-item">
+	          <span class="icon">🎓</span>
+	          <a href="https://yale-csm.symplicity.com/profiles/kyungeun.lim" target="_blank">Yale Career Link</a>
+	        </div>
+	        <div class="bullet-item">
+	          <span class="icon">📖</span>
+	          <a href="https://academiccommons.columbia.edu/catalog/ac:156964" target="_blank">Dissertation</a>
+	        </div>
+	      </div>
 	    </div>
-
 
 	    <div class="col-md-10">
-	      <p class="lead"> Kyungeun is a data/ML scientist with a PhD in Physics from Columbia and postdoctoral research at Yale. She played key leadership roles in international collaborations in dark matter and neutrino physics, co-authoring over 25 peer-reviewed publications with more than 8,000 citations, and has served as a reviewer for prestigious physics journals. Her work spanned experimental design, data analysis, and publication, with hands-on experience at world-class laboratories such as the Kamioka Observatory in Japan and Gran Sasso National Laboratory in Italy. Through her work on the CUORE and XENON experiments, she held leadership positions including data production lead and vetting board member for CUORE, developing deep expertise in systematic experimental methodology and cross-cultural scientific collaboration.
-	      
-	      <p class="lead"> She transitioned to industry ML, developing production systems at NBCUniversal for major events like the Olympics and Super Bowl, and most recently at CloudTrucks where she built end-to-end ML product pipelines including personalized recommendation engines that increased driver load booking rate by 12%. Her expertise spans the full ML lifecycle from research and experimentation to scalable deployment and monitoring.
+	      <p class="lead"> Kyungeun is a data/ML scientist with a PhD in Physics from Columbia and postdoctoral research at Yale. She played key leadership roles in international collaborations in dark matter and neutrino physics, leading contributions to over 25 peer-reviewed publications with more than 8,000 citations, and has served as a reviewer for prestigious physics journals. Her work spanned experimental design, data analysis, and publication, with hands-on experience at world-class laboratories such as the <a href="https://www-sk.icrr.u-tokyo.ac.jp/en/" target="_blank">Kamioka Observatory</a> in Japan and <a href="https://www.lngs.infn.it/en" target="_blank">Gran Sasso National Laboratory</a> in Italy. Through her work on the CUORE and XENON experiments, she developed deep expertise in cross-cultural scientific collaboration and systematic experimental methodology, and took on leadership roles including data production lead and vetting board member for CUORE.
+		
+	      <p class="lead"> She transitioned to industry ML, developing production systems at NBCUniversal for major events like the Olympics and Super Bowl, and most recently at CloudTrucks where she built end-to-end ML product pipelines including personalized recommendation engines that increased driver load booking rate by 12%. Her expertise spans the full ML lifecycle from research and experimentation to scalable deployment and monitoring. She is currently focused on the intersection of systematic methodology and AI safety, with particular interest in mechanistic interpretability research. </p>
 
-		She is currently focused on the intersection of systematic methodology and AI safety, with particular interest in mechanistic interpretability research. </p>
-
-	      <p class="lead"> Beyond her technical work, she is a lifelong learner with extensive travel across Europe, South America, and Africa, and enjoys museums, reading (recently gravitating toward sci-fi), podcasts on philosophy and art history, and studying learning methodologies. She avoids social media, preferring deep engagement with ideas and culture, and is a fan of Haruki Murakami, Astor Piazzolla, Gustav Klimt, and Elsa Schiaparelli. </p>
+	      <p class="lead">
+		Beyond her technical work, she is an avid learner who engages with podcasts and videos spanning philosophy, big history, art, and literature. She maintains an active lifestyle through regular dance classes (for over a decade), barre, pilates, and yoga, complemented by frequent walks and monthly museum visits. She enjoys traveling, with extensive experiences across Europe, the Americas, and Africa. She likes tango and bossa nova, as well as K-pop music, and recently enjoys reading sci-fi. She preserves her attention by avoiding social media, choosing instead to nurture meaningful friendships through monthly conversations.
+	      </p>
 	    </div>
 	</div>
 	</div>
+
+      <!-- Media & Recognition Section -->
+      <div class="starter-template">
+        <hr>
+        <h2>Media & Recognition</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <h4><a href="https://www.theellaproject.com/kyungeun-lim/" target="_blank">Featured Data Scientist Profile: Encouraging Women in STEM</a></h4>
+            <p class="text-muted">The Ella Project, May 2018</p>
+            <p>Profiled as a Senior Lead Data Scientist discussing barriers and opportunities for women in STEM careers, sharing insights on overcoming stereotypes and building confidence in technical fields.</p>
+          </div>
+          <div class="col-md-4">
+            <h4><a href="https://medium.com/insight-data/data-scientists-and-engineers-advice-i-would-give-my-younger-self-16d1df492904" target="_blank">Career Advice Panel: Data Scientists and Engineers Share Their Journey</a></h4>
+            <p class="text-muted">Insight Data Science, March 2018</p>
+            <p>Participated in panel discussion at Columbia University offering career transition advice to students, sharing experiences from academia to industry data science.</p>
+          </div>
+          <div class="col-md-4">
+            <h4><a href="https://www.nytimes.com/2011/04/14/science/space/14dark.html" target="_blank">NYT Coverage: Columbia Physicists' Underground Hunt for Universe's Missing Matter</a></h4>
+            <p class="text-muted">New York Times, April 2011</p>
+            <p>Featured in coverage of dark matter research during graduate studies at Columbia University.</p>
+          </div>
+        </div>
+      </div>
+
       <div class="starter-template">
 
       </div>
