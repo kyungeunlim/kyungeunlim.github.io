@@ -9,7 +9,7 @@ Welcome to the repository for Kyungeun Lim's personal website! This repository c
 
 ## Introduction
 
-This repository hosts the source code for Kyungeun Lim's personal website. The website is built using HTML and CSS, providing a clean and simple interface to showcase personal projects, blogs, and contact information.
+This repository hosts the source code for Kyungeun Lim's professional portfolio website. Built with HTML and CSS, it features an about section, project showcase, and media coverage highlights.
 
 ## Structure
 
