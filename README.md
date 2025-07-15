@@ -16,7 +16,7 @@ This repository hosts the source code for Kyungeun Lim's personal website. The w
 The repository contains the following structure:
 ```
 kyungeunlim.github.io/
-├── index.html          # The main landing page of the website contains About
+├── index.html          # About page
 ├── projects.html       # Projects page
 └── statics/
     ├── css/
