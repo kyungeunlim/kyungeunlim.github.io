@@ -13,6 +13,25 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="static/css/bootstrap.css">
 
+    <style>
+      .panel-body {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .panel-body .lead {
+        font-size: 22px;
+        line-height: 1.5;
+      }
+
+      .panel-body ul li {
+        font-size: 16px;
+      }
+
+      .panel-body h4 {
+        font-size: 18px;
+      }
+    </style>
   </head>
 
   <body>
@@ -43,7 +62,7 @@
 
       <div class="starter-template">
         <h1>Projects</h1>
-        <p class="lead">A collection of data science, machine learning, and research projects spanning from experimental physics to industry applications and interpretability research.</p>
+        <p class="lead">A collection of data science, machine learning, and research projects spanning from experimental physics to industry applications and AI interpretability research.</p>
       </div>
 
       <!-- Projects Grid -->
@@ -52,9 +71,10 @@
 	<!-- Transformer Project -->
 	<div class="col-md-6">
 	  <div class="panel panel-default">
-	    <div class="panel-heading">
-             <!-- <h3 class="panel-title">Transformer Architecture Deep Dive: A Physics Perspective</h3> -->
-              <h3 class="panel-title">Transformer Architecture: <strong> WIP </strong></h3>	      
+	    <div class="panel-heading" style="display: flex; justify-content: space-between; align-items: center;">
+             <!-- <h3 class="panel-title">Transformer Architecture Deep Dive: A Physics Perspective</h3> -->	      
+	      <h3 class="panel-title" style="margin: 0;">Transformer Architecture: <strong>WIP</strong></h3>
+	      <small class="text-muted">July 2025</small>
 	    </div>
 	    <div class="panel-body">
               <p><strong>Technologies:</strong> 
@@ -82,8 +102,10 @@
 	<!-- P-Rex Project -->
 	<div class="col-md-6">
 	  <div class="panel panel-default">
-	    <div class="panel-heading">
-              <h3 class="panel-title">P-Rex: Personalized Load Recommendation System</h3>
+
+	    <div class="panel-heading" style="display: flex; justify-content: space-between; align-items: center;">
+	      <h3 class="panel-title" style="margin: 0;">P-Rex: Personalized Load Recommendation System</h3>
+	      <small class="text-muted">June 2024</small>
 	    </div>
 	    <div class="panel-body">
               <p><strong>Technologies:</strong> 
@@ -119,8 +141,9 @@
 	<!-- Wave Machine Project -->
 	<div class="col-md-6">
 	  <div class="panel panel-default">
-	    <div class="panel-heading">
-              <h3 class="panel-title">Wave Machine: Sea Conditions Prediction</h3>
+	    <div class="panel-heading" style="display: flex; justify-content: space-between; align-items: center;">
+	      <h3 class="panel-title" style="margin: 0;">Wave Machine: Sea Conditions Prediction</h3>
+	      <small class="text-muted">July 2017</small>
 	    </div>
 	    <div class="panel-body">
               <p><strong>Technologies:</strong> 
@@ -133,7 +156,7 @@
         
               <p><strong>Key Achievements:</strong></p>
               <ul>
-		<li>Bayesian approach handling uncertainty with limited data</li>		
+		<li>Bayesian approach handling uncertainty with small data</li>		
 		<li>Physics-inspired feature engineering for sensor data analysis</li>
 		<li>Successful model validation using posterior predictions</li>
 		<li> Automated reporting foundation enabling future fuel optimization</li>
