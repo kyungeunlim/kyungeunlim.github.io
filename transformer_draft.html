@@ -105,24 +105,42 @@
       </div>
 
       <div class="subsection">
-	<h3>Why I Chose This Specific Research Area</h3>
+	<h3>Focus: Why AI Interpretability</h3>
 	<!--<p class="lead">-->
-	  <p>As a lifelong learner, I've always been driven by curiosity both broad and deep—from podcasts, audiobooks and videos covering diverse topics to diving into technical tutorials and online courses. However, recent experiences losing close ones and witnessing global upheavals made me acutely aware that time is our most scarce resource. With knowledge and tools exploding around us, I felt an urgent need to be more intentional about where I focus my efforts.</p>
+	  <p>I've always enjoyed learning broadly and deeply—from podcasts and audiobooks on diverse topics to technical tutorials and online courses—driven mostly by curiosity and genuine enjoyment. But I also believe learning isn't optional in this era of exploding knowledge; it's directly related to our collective survival. The COVID pandemic illustrated this perfectly: without mRNA vaccine technology—built on decades of accumulated scientific knowledge—humanity could have faced an existential threat. </p>
 
-	<p>This led me to reflect deeply: what problems do I feel strongly enough about to dedicate my limited time to? What's the balance between leveraging my existing knowledge and adopting new tools to tackle meaningful challenges?</p>
+	  <p>The rapidly exploding pace of new knowledge made me realize I need to be more efficient at learning itself: I've been pondering what would be the most effective way of learning how to learn. In addition to it, recently experiencing the loss of loved ones and witnessing devastating events so close to home reinforced that time is our scarcest resource. </p>
 
-	<p>The answer traces back to questions that have fascinated me since watching "Ghost in the Shell" in the 90s: What makes a human human? My early conclusion was "memory"—and after learning more about brain science, I'm convinced this intuition was correct. Memory is fundamental to consciousness, behavior, and identity. Recent films like "After Yang" have renewed these questions about the boundary between human and artificial intelligence.</p>
+	  <p>These convergent realizations created a dilemma: I can learn forever and find joy in it, but what's the point if I don't use it for something meaningful? This led me to reflect deeply on what problems I feel strongly enough about to be worth my limited time, and how to balance leveraging my existing knowledge with efficiently adopting new tools to tackle challenges that matter.</p>
 
-	<p>While I spent years in physics trying to understand our universe, my transition to industry eight years ago was driven by curiosity about the "real world"—though as a physicist, I found it ironic that business operates on empirical rules and psychology rather than fundamental laws of nature.</p>
+	<p>The answer traces back to questions that have fascinated me since watching "Ghost in the Shell" in the 90s: What makes a human human? My early conclusion was "memory"—and after learning more about brain science, I'm convinced this intuition was correct. Memory is fundamental to emotion, action, identity, and consciousness. Recent films like "After Yang" have renewed these questions about the boundary between human and AI.</p>
 
-	<p>Now, with AI systems becoming increasingly sophisticated, I see interpretability research as the perfect intersection of my physics training, my industry experience, and my long-standing fascination with consciousness. Understanding how these systems actually work—reverse-engineering their "memory" and decision-making—feels like the most meaningful problem I can contribute to. It combines the rigor of physics with the profound questions about intelligence that have captivated me for decades.</p>
+	<p>This balance became clear when I considered AI interpretability research. The field can benefit from rigorous analytical skills to reverse-engineer complex systems—drawing from physics training—and practical experience bridging theory with real-world applications. Interpretability sits at this intersection, combining both scientific rigor and engineering pragmatism while rapidly evolving with new techniques and tools.</p>
+
+	<p>With AI systems becoming increasingly sophisticated, I see interpretability research as the perfect intersection of my physics training, my industry experience, and my long-standing fascination with consciousness. Understanding how these systems actually work—reverse-engineering their "memory" and decision-making—feels like the most meaningful problem I can contribute to. I also believe that understanding current AI is a prerequisite for safely developing artificial superintelligence (ASI). It combines the rigor of physics with the profound questions about intelligence that have captivated me for decades, while addressing what I see as a critical foundation for humanity's AI future.
+	</p>
       </div>
+
+      <div class="subsection">
+        <h3>Approach: Experimental Learning & Communication</h3>
+
+	<p>This project also served as an experiment in applying recent insights from brain science to my learning approach. I'd learned that our brains work differently from muscles—the key isn't avoiding fatigue but leveraging how creativity emerges from the default mode network through novel combinations of existing knowledge. I wanted to challenge my traditional "deep focus for a few hours" approach, which I considered my core strength and was often praised for, and become more flexible with planning, revising scope on the fly rather than spending days perfecting initial plans.</p>
+
+	<p>[fill-in: Need to write why i thought writing this write up was important for communcation] </p?
+	
+	</div>      
+
       
       <div class="subsection">
-        <h3>The Decision to Commit Two Weeks</h3>
+        <h3>Planning: Two-Week Timeline</h3>
         <p>[Fill in: Why I chose interpretability research, discovering Anthropic's work, deciding to go deep rather than surface-level learning]</p>
-      </div>
+	
+	<p>With upcoming travel scheduled in four weeks, I saw an opportunity to test whether interpretability research was the right direction for my career transition. Drawing from my previous ultra learning experience, I allocated two weeks for deep exploration, one week for writing, and kept the final week as contingency—a more realistic timeline than my perfectionist tendencies usually allow.</p>
 
+      <p>The biggest challenge was that scope would entirely depend on how efficiently I could learn the fundamentals. Based on early conversations with friends familiar with the field, I pivoted from attempting meaningful analysis using existing methods to focusing on building solid foundational understanding. I reduced scope to what I could learn effectively and what unique perspectives or questions I might contribute through a physicist's lens.</p>
+
+      </div>
+      
       <div class="subsection">
         <h3>Anthropic's Interpretability Agenda</h3>
         <p>[Fill in: What drew me to their specific approach - mechanistic interpretability, production model focus, circuit analysis methods]</p>
@@ -135,40 +153,94 @@
 
       <div class="subsection">
         <h3>Prior Knowledge Baseline</h3>
+	   <p>[TODO: Increase the distance among h4s, center the figure caption?]</p>
         
         <h4>Neural Networks Foundation</h4>
         <p>I already had basic knowledge of neural networks from my academic time - at the very core, they are inspired by our brain, and their power comes from "activation" functions of neurons, which introduce non-linearity and allow the network to learn complex patterns rather than just linear combinations. I also knew that "deep" means the number of layers is larger, which allows better pattern recognition.</p>
 
         <h4>Sequential Models Intuition</h4>
-        <p>[Fill in: Add diagram]
-	</p>	
+	<figure class="centered_image">
+	  <center>
+	    <img src="static/transformer/sequential_models_evolution.png" width="1000px" >
+	  </center>
+	  <figcaption>Fig.1: Evolution of Sequential Pattern Understanding: From simple Markov chains to sophisticated attention mechanisms, showing how each approach addresses limitations of previous methods.</figcaption>
+	</figure>
+	<br>
         <p>With my physicist mindset, I had this picture in mind: progressively building up the dimensions of information from previous steps. Markov chains utilize one previous step to make predictions, Fibonacci-style problems utilize two previous steps, and time series models utilize multiple previous steps with exponentially decaying weights, focusing more on recent information. RNNs represent the next evolution where we can theoretically use all previous information in a sequence, but they suffer from vanishing gradients over long distances. LSTMs solved this through sophisticated gating mechanisms that can selectively remember and forget information across long sequences. Attention mechanisms represent the latest breakthrough where I don't have to process information linearly—I can intelligently focus on the most relevant parts of the entire sequence simultaneously, making optimal use of multiple previous steps. All of these advances were only possible with the development of powerful computers, allowing many complex operations within much shorter times (similar to how Bayesian inference became practical due to better computing power). Like almost any technological evolution, this represents repeated attempts to solve the same fundamental problem—understanding sequential patterns—by addressing the limitations of previous methodologies with advancing computational capabilities.</p>
 
         <h4>Previous Transformer Exposure</h4>
         <p>I also skimmed through the "Attention is All You Need" paper years ago and understood that it essentially removed the need for RNNs in many sequence modeling tasks. More recently, I also took Andrew Ng's Coursera courses to have better understanding of both neural networks and deep learning fundamentals as well as generative AI with language models. These were also to gain hands-on implementation experience and build basic knowledge of the necessary tools.</p>
 
         <h4>Practical Experience</h4>
-        <p>In terms of tooling, I built an LSTM-based forecasting model at CloudTrucks which provided good exposure to PyTorch, but I haven't used Transformers previously.</p>
+	<p>I led the development of P-Rex, a personalized recommendation system using XGBoost at CloudTrucks, which gave me hands-on experience with feature engineering and production ML deployment. Later, I built an LSTM-based forecasting model, providing exposure to PyTorch and neural network implementation. My work with PostgreSQL and recommendation systems for search ranking also familiarized me with query-key-value concepts used for attention mechanisms in Transformers, though I hadn't worked directly with Transformer architectures previously.</p>
+
+	
       </div>
 
       <div class="subsection">
         <h3>Learning Strategy: Fundamentals Over Trends</h3>
-        <p>[Fill in: Decision to focus on foundational understanding rather than keeping up with latest papers, rationale for this approach]</p>
-      </div>
+	<p>Feeling a strong urgency to understand how AI systems actually work, I discovered Anthropic's Mechanical Interpretability Research Scientist job posting and was immediately drawn to their approach of reverse-engineering neural networks. I wanted to quickly assess whether this was the research direction I should pursue, so I dove into the extensive resources provided in their job posting guidelines. </p>
+
+	<p> However, after initially trying to follow all available sources sequentially, I became overwhelmed. I started pondering whether I needed to explore the most recent research to stay "current" or return to fully understanding fundamentals. Stepping back, I realized that if my ultimate goal was to understand how AI works through reverse-engineering transformers, it made no sense to skip understanding transformers from scratch. This reminded me of spending considerable time on harmonic oscillators in Classical Mechanics and hydrogen atoms in Quantum Mechanics—fundamentals are essential building blocks.</p>
+
+	<p>It's simply impossible to "stay current" in depth without solid basics, and this approach aligned with my physics background and natural preference for understanding foundational principles first. I made a conscious decision to prioritize foundational understanding over keeping up with the latest papers, viewing this as both a reality check on my capacity and a strategic choice that matched my learning style.</p>
+
+	<p>Additionally, I wanted to preserve my "novice" perspective—those fresh questions and potential challenges to existing assumptions that often get lost once you become too familiar with a field. I made sure to log these initial insights to revisit later, recognizing that beginner's perspectives can sometimes reveal overlooked assumptions or alternative approaches.</p>
+	
+
 
       <div class="subsection">
-        <h3>Tools and Resources</h3>
-        
-        <h4>Primary Learning Resources</h4>
+        <h3>Learning Philosophy and Execution</h3>
+	<p>My approach to learning something fundamentally new—especially at the cutting edge—relies on structuring the experience to both accelerate early understanding and build deep intuition over time. I’ve refined this process through years of transitioning between disciplines, and for this deep dive, I leaned heavily on strategies rooted in physics training, modular thinking, and cognitive neuroscience insights.</p>
+
+	<h4>Modularization, Sequentialization, Symmetrization</h4>
+	<p> Refer my notes on yt clips</p>
+	<h4>Building from Familiar Foundations</h4>
+	<p>[Need to ponder further for this section</p>
+
+	<h4>Speed + Repetition: Leveraging Audio and Fast Media </h4>
+	<p>Speed and repetition are key. For passive intake (lectures, tutorials, interviews), I always listened at 2x speed, pausing frequently to write down ideas that felt intuitively important. For instance, I’d slow down when Andrej Karpathy mentioned early versions of attention as “RNN soft search,” because... [I need to rewrite this part] it clicked with earlier architecture trade-offs I was studying.</p>
+
+	<h4>Execution: From Resources to Real Understanding</h4>
+	<p>The learning pipeline I followed looked roughly like this:</p>
+	<ol>
+	  <li><strong>Curate Resources:</strong> I started with core videos, blog posts, and milestone papers (TransformerLens docs, Neel Nanda’s tutorials, Karpathy’s lectures).</li>
+  
+	  <li><strong>Translate for Absorption:</strong> Used NotebookLM to parse dense material and draft my own study guides with glossaries, quizzes, and narrative summaries.</li>
+  
+	  <li><strong>Internalize Concepts:</strong> (Need to rewrite this) Repeated exposure—glossary → quiz → briefing doc → audio overview—allowed me to test if I truly understood before moving on. </li>
+  
+	  <li><strong>Hands-on Hypothesis Testing:</strong> For code understanding, I read line-by-line, inputting custom values to test my hypotheses about what each function or module should output.</li>
+  
+	  <li><strong>Refine with Reflection:</strong> Whenever something clicked or didn’t, I noted it down, often returning days later with fresh perspective.</li>
+	</ol>
+
+	<!--<h4>Learning Schedule & Experiments</h4>-->
+	<h4>Daily Workflow and Experimentation</h4>
+        <p>[Fill in: How you set up your learning environment, what experiments you tried, how you structured your daily learning]</p>
+
+	<p> Need to update a bit further: I structured my learning with time-divided approaches: mornings for Andrej's lectures, afternoons for interpretability demo notebooks, and walking time for Chris Olah's interviews on mechanical interpretability perspectives. For complex concepts, I screen-captured code snippets and diagrams, then asked Claude for thorough explanations, leveraging AI tools as learning accelerators rather than replacements for deep understanding.</p>	
+
+      </div>
+	
+
+      <div class="subsection">
+        <h3>Tools and Resources</h3>	
+        <!--<h4>Primary Learning Resources</h4>-->
+	<h4>Core Technical Resources</h4>
         <ul>
-          <li><strong>TransformerLens:</strong> [Fill in experience with installation and usage]</li>
-          <li><strong>Neel Nanda's Tutorials:</strong> [Fill in what you learned from these]</li>
-          <li><strong>Andrej Karpathy's Videos:</strong> [Fill in historical context gained]</li>
-          <li><strong>Fundamental Papers:</strong> [List specific papers read and takeaways]</li>
+	  <li><strong>TransformerLens:</strong> Since Neel Nanda (a leading researcher in mechanistic interpretability) wrote this library, understanding his transformer implementation approach provided valuable insights into both the architecture and the interpretability tooling philosophy.</li>
+	  <li><strong>Neel Nanda's Tutorials:</strong> Found his transformer video specifically designed for interpretability research onboarding. Went through his transformer implementation line by line, which took longer than expected but provided solid code-level understanding of building transformers from scratch.</li>
+	  <li><strong>Andrej Karpathy's Videos:</strong> Watched his transformer lecture at 2x speed, pausing to write down keywords. Karpathy (former Tesla AI Director, known for exceptional educational content) provided crucial historical "causality" context—how attention mechanisms evolved from previous limitations, including the fascinating detail that attention was first mentioned in earlier papers as "RNN soft search," making query-key-value concepts click.</li>
+	  <li><strong>Fundamental Papers:</strong> Need to update: Focused on milestone papers that led to attention mechanisms rather than trying to cover recent publications, prioritizing depth over breadth.</li>
         </ul>
 
-        <h4>Experimental Approach</h4>
-        <p>[Fill in: How you set up your learning environment, what experiments you tried, how you structured your daily learning]</p>
+	<h4>Knowledge Processing Tools</h4>
+		•	NotebookLM: Used to turn dense source materials into digestible formats (glossary, quiz, audio overview).
+	•	Claude, ChatGPT, and Perplexity: Used as thought partners to clarify tough concepts, test understanding, and get alternative explanations for both code and theory.
+	For example: When I couldn’t wrap my head around attention weights in a multi-head setting, I would copy diagrams or code snippets into Claude and ask for simplified mental models or analogies. I often used ChatGPT for debugging and sanity-checking my implementation-based hypotheses.
+	* Colab, Github
+
       </div>
 
       <!-- Section 3: Current Understanding & Physics Parallels -->
@@ -178,7 +250,16 @@
 
       <div class="subsection">
         <h3>Transformer Architecture Deep Dive</h3>
-        
+
+		<figure class="centered_image">
+	  <center>
+	    <img src="static/transformer/transformer_flowchart_300.drawio.png" width="300px">
+	  </center>
+	  <figcaption style="text-align: center;">
+	    Fig.2: Flowchart of Transformer, Decoder Only
+	  </figcaption>
+	</figure>
+	<br>
         <h4>Attention Mechanism</h4>
         <p>[Fill in: Your understanding of self-attention, how it works mathematically, what makes it powerful]</p>
 
@@ -290,7 +371,7 @@
         </p>
         <p class="text-center">
           Questions about this research? Find me on 
-          <a href="https://www.linkedin.com/in/kyungeun-lim" target="_blank">LinkedIn</a> | 
+          <a href="https://www.linkedin.com/in/kyungeun-lim" target="_blank">LinkedIn</a> |
           <a href="https://github.com/kyungeunlim" target="_blank">GitHub</a>
         </p>
       </div>
