@@ -154,23 +154,23 @@
 
       
       <div class="subsection">
-        <h3>Planning: Two-Week Timeline</h3>
-        <p>[Fill in: Why I chose interpretability research, discovering Anthropic's work, deciding to go deep rather than surface-level learning]</p>
+        <h3>Planning: Two-Week Timeline & Scope</h3>
 	
 	<p>With upcoming travel scheduled in four weeks, I saw an opportunity to test whether interpretability research was the right direction for my career transition. Drawing from my previous ultra learning experience, I allocated two weeks for deep exploration, one week for writing, and kept the final week as contingency—a more realistic timeline than my perfectionist tendencies usually allow.</p>
 
-      <p>The biggest challenge was that scope would entirely depend on how efficiently I could learn the fundamentals. Based on early conversations with friends familiar with the field, I pivoted from attempting meaningful analysis using existing methods to focusing on building solid foundational understanding. I reduced scope to what I could learn effectively and what unique perspectives or questions I might contribute through a physicist's lens.</p>
+	<p>The biggest challenge was that the scope would entirely depend on how efficiently I could learn the fundamentals. Based on early conversations with friends familiar with the field, I pivoted from attempting meaningful analysis using existing methods to focusing on building a solid foundational understanding. I reduced the scope to what I could learn effectively and to the unique perspectives or questions I might contribute through a physicist’s lens. This means I intentionally left out existing interpretability research, which I plan to revisit in future work.</p>
+
 
       </div>
-      
+      <!--
       <div class="subsection">
         <h3>Anthropic's Interpretability Agenda</h3>
         <p>[Fill in: What drew me to their specific approach - mechanistic interpretability, production model focus, circuit analysis methods, I might skip]</p>
-      </div>
+      </div> -->
 
       <!-- Section 2: Learning Methodology -->
       <div class="section-header">
-        <h2>2. Learning Methodology</h2>
+        <h2>2. Learning Methodology: How?</h2>
       </div>
 
       <div class="subsection">
@@ -211,19 +211,53 @@
 
 
       <div class="subsection">
-        <h3>Learning Philosophy and Execution</h3>
-	<p>My approach to learning something fundamentally new—especially at the cutting edge—relies on structuring the experience to both accelerate early understanding and build deep intuition over time. I’ve refined this process through years of transitioning between disciplines, and for this deep dive, I leaned heavily on strategies rooted in physics training, modular thinking, and cognitive neuroscience insights.</p>
+        <h3>Systematic Learning Approach</h3>
+	<p>My approach to learning something fundamentally new—especially at the cutting edge—relies on structuring the experience to both accelerate early understanding and build deep intuition over time. I’ve refined this process through years of transitioning between disciplines, and for this deep dive, I leaned heavily on strategies rooted in physics training, modular thinking, and cognitive neuroscience insights. I've distilled this into a repeatable six-step process:</p>
 
+	<h4>1. Learn terminology & connect to existing knowledge</h4>
+	<p>Memorize new concepts with clear definitions to create basic building blocks—I then only need to figure out hierarchical relationships among them. This follows the Rumpelstiltskin principle: you can't truly understand what you can't name. I also noticed that as I accumulate knowledge across fields, I increasingly spot similar concepts used in different domains.</p>
+
+	<h4>2. Map hierarchical structure</h4>
+	<p>In books or papers, this is the table of contents. This is where I personally benefit most from LLMs. When deciding whether to read a paper, I ask: 1) summarize the whole paper in a few bullet points, 2) what are the strengths and weaknesses, and 3) how would you improve it? I've found NotebookLM particularly good for this purpose and use it as my default delegation tool.[add reference]</p> 
+
+	<h4>3. Skim fast, focus on gaps</h4>
+	<p>This is based on the fact that I already have accumulated fundamental knowledge from other work (basic math, science concepts, etc.). To be efficient about learning new things, I can skim through everything at high speed, then focus on parts I don't understand, get stuck on, or find insightful.</p>
+
+	<h4>4. Test with hands-on coding</h4>
+	<p>This is hypothesis testing — understanding output with different inputs builds real understanding and shows how I can materialize/execute ideas.</p>
+
+	<h4>5. Create visual summaries</h4>
+	<p>From my academic experience, I learned that eventually any research result is summarized as either a figure or a table. Diagrams are visual aids I often use to communicate complicated concepts with team members when presenting projects.</p>
+
+	<h4>6. Test through active recall</h4>
+	<p>The real test is whether I can explain each concept clearly—this is the critical part of turning memory into knowledge. Writing is often a good way to do this, and this blog also serves this purpose.</p>
+
+	<!--<h4>Execution Example: From Resources to Real Understanding</h4>-->
+	<h4> Example: This work</h4>
+	<p>The learning pipeline I followed looked roughly like this:</p>
+	
+
+	<!--
 	<h4>Modularization, Sequentialization, Symmetrization</h4>
-	<p> [Update with the notes on yt clips]</p>
+	<p> This is the idea I borrowed from Dr. Moon-ho Park, who's been working on the various science subjects in the big history scheme. </p>
 	<h4>Building from Familiar Foundations</h4>
 	<p>[Need to ponder further for this section</p>
 
 	<h4>Speed + Repetition: Leveraging Audio and Fast Media </h4>
 	<p>Speed and repetition are key. For passive intake (lectures, tutorials, interviews), I always listened at 2x speed, pausing frequently to write down ideas that felt intuitively important. For instance, I’d slow down when Andrej Karpathy mentioned early versions of attention as “RNN soft search,” because... [I need to rewrite this part] it clicked with earlier architecture trade-offs I was studying.</p>
+	-->
+	
+	<h5>Pre-steps: Learning Material Procurement</h5>
+	<p>1. Check the job posting of interest, find the suggested readings: In this case, I was looking at the <a href= "https://job-boards.greenhouse.io/anthropic/jobs/4020159008"> Research Scientist, Interpretability at Anthropic</a></p>
+	<p>2. Curate resources: Went throgh the suggested papers and blogs first, and accompanied it with other <a href ="https://www.youtube.com/watch?v=XfpMkf4rD6E">transformer lecture</a> from Andrej Karpathy. What I liked about this tranformer lecture was having historical development knowledge on the attention mechanism, after knowing that previously there's RNN Soft Search, it was very clear why the key componenets of attention are query, key, and value.<p>
+	<p>3. Build exploratory knowledge on the field and community in parallel: During the daily walk, I listened to Chris Olah's <a href="https://podcasts.apple.com/gr/podcast/107-chris-olah-on-what-the-hell-is-going-on-inside/id1245002988?i=1000531014823"> early Hard Fork podcasts</a> with 2x speed. <p>
+	<p> 4. Take a look of the resources from 2 with trials and errors, determine one material to write a blog: In the beginning I went through the foundational papers such as Toy Models of Superposition and A Mathematical Frameworks. During the course, also went through TransformerLens tutorials doing a bit of ablation analysis and other examples and got so many questions. I decided to step back and re-adjusted the scope, and decided to focus on Transformer walk through <a href="https://www.youtube.com/watch?v=bOYE6E8JrtU&list=PL7m7hLIqA0hoIUPhC26ASCVs_VrqcDpAz&index=1&ab_channel=NeelNanda"> videos</a> from Neel Nanda, with a goal of understanding transformer <a href= "https://colab.research.google.com/github/neelnanda-io/Easy-Transformer/blob/clean-transformer-demo/Clean_Transformer_Demo_Template.ipynb"> codes</a> fully.
 
-	<h4>Execution: From Resources to Real Understanding</h4>
-	<p>The learning pipeline I followed looked roughly like this:</p>
+	  <h5>Execution Steps using NotebookLM</h5>
+	  <p> 1. Create </p>
+	  
+	  
+	  
 	<ol>
 	  <li><strong>Curate Resources:</strong> I started with core videos, blog posts, and milestone papers (TransformerLens docs, Neel Nanda’s tutorials, Karpathy’s lectures).</li>
   
@@ -236,38 +270,19 @@
 	  <li><strong>Refine with Reflection:</strong> Whenever something clicked or didn’t, I noted it down, often returning days later with fresh perspective.</li>
 	</ol>
 
-	<!--<h4>Learning Schedule & Experiments</h4>-->
+	<!--<h4>Learning Schedule & Experiments</h4>
 	<h4>Daily Workflow and Experimentation</h4>
         <p>[Fill in: How you set up your learning environment, what experiments you tried, how you structured your daily learning]</p>
 
 	<p> Need to update a bit further: I structured my learning with time-divided approaches: mornings for Andrej's lectures, afternoons for interpretability demo notebooks, and walking time for Chris Olah's interviews on mechanical interpretability perspectives. For complex concepts, I screen-captured code snippets and diagrams, then asked Claude for thorough explanations, leveraging AI tools as learning accelerators rather than replacements for deep understanding.</p>	
-
+	-->
       </div>
 	
 
-      <div class="subsection">
-        <h3>Tools and Resources</h3>
-	<p>[This whole section needs to be updated]</p>
-        <!--<h4>Primary Learning Resources</h4>-->
-	<h4>Core Technical Resources</h4>
-        <ul>
-	  <li><strong>TransformerLens:</strong> Since Neel Nanda (a leading researcher in mechanistic interpretability) wrote this library, understanding his transformer implementation approach provided valuable insights into both the architecture and the interpretability tooling philosophy.</li>
-	  <li><strong>Neel Nanda's Tutorials:</strong> Found his transformer video specifically designed for interpretability research onboarding. Went through his transformer implementation line by line, which took longer than expected but provided solid code-level understanding of building transformers from scratch.</li>
-	  <li><strong>Andrej Karpathy's Videos:</strong> Watched his transformer lecture at 2x speed, pausing to write down keywords. Karpathy (former Tesla AI Director, known for exceptional educational content) provided crucial historical "causality" context—how attention mechanisms evolved from previous limitations, including the fascinating detail that attention was first mentioned in earlier papers as "RNN soft search," making query-key-value concepts click.</li>
-	  <li><strong>Fundamental Papers:</strong> Need to update: Focused on milestone papers that led to attention mechanisms rather than trying to cover recent publications, prioritizing depth over breadth.</li>
-        </ul>
-
-	<h4>Knowledge Processing Tools</h4>
-		•	NotebookLM: Used to turn dense source materials into digestible formats (glossary, quiz, audio overview).
-	•	Claude, ChatGPT, and Perplexity: Used as thought partners to clarify tough concepts, test understanding, and get alternative explanations for both code and theory.
-	For example: When I couldn’t wrap my head around attention weights in a multi-head setting, I would copy diagrams or code snippets into Claude and ask for simplified mental models or analogies. I often used ChatGPT for debugging and sanity-checking my implementation-based hypotheses.
-	* Colab, Github
-
-      </div>
 
       <!-- Section 3: Current Understanding & Physics Parallels -->
       <div class="section-header">
-        <h2>3. Current Understanding: Where Physics Meets AI</h2
+        <h2>3. Physicist's Transformer Understanding: What</h2
       </div>
 
       <div class="subsection">
@@ -368,6 +383,7 @@
         </div>
       </div>
 
+      <!--
       <div class="subsection">
         <h3>Interpretability Concepts</h3>
         
@@ -380,7 +396,8 @@
         <h4>Mechanistic Understanding</h4>
         <p>[Fill in: What "mechanistic interpretability" means to you now, how it differs from other approaches]</p>
       </div>
-
+      -->
+      
       <!-- Section 4: Research Questions -->
       <div class="section-header">
         <h2>4. Open Questions: A Physicist's Perspective</h2>
@@ -429,7 +446,7 @@
 	<p>How does transformer in-context learning compare to human rapid adaptation? The ability to change behavior without parameter updates seems more like pattern recognition than true learning—what can neuroscience tell us about this distinction?</p>
       </div>
 
-      <!-- Section 5: Reflection & Next Steps -->
+      <!-- Section 5: Reflection & Next Steps 
       <div class="section-header">
         <h2>5. Reflection: What This Process Taught Me</h2>
       </div>
@@ -448,10 +465,28 @@
         <h3>Next Steps</h3>
         <p>[Fill in: Specific areas you want to explore further, skills to develop, research directions to pursue]</p>
       </div>
+      -->
 
       <!-- Appendix -->
       <div class="section-header">
         <h2>Appendix: Resources and Tools</h2>
+        <h3>Tools and Resources</h3>
+	<p>[This whole section needs to be updated]</p>
+        <!--<h4>Primary Learning Resources</h4>-->
+	<h4>Core Technical Resources</h4>
+        <ul>
+	  <li><strong>TransformerLens:</strong> Since Neel Nanda (a leading researcher in mechanistic interpretability) wrote this library, understanding his transformer implementation approach provided valuable insights into both the architecture and the interpretability tooling philosophy.</li>
+	  <li><strong>Neel Nanda's Tutorials:</strong> Found his transformer video specifically designed for interpretability research onboarding. Went through his transformer implementation line by line, which took longer than expected but provided solid code-level understanding of building transformers from scratch.</li>
+	  <li><strong>Andrej Karpathy's Videos:</strong> Watched his transformer lecture at 2x speed, pausing to write down keywords. Karpathy (former Tesla AI Director, known for exceptional educational content) provided crucial historical "causality" context—how attention mechanisms evolved from previous limitations, including the fascinating detail that attention was first mentioned in earlier papers as "RNN soft search," making query-key-value concepts click.</li>
+	  <li><strong>Fundamental Papers:</strong> Need to update: Focused on milestone papers that led to attention mechanisms rather than trying to cover recent publications, prioritizing depth over breadth.</li>
+        </ul>
+
+	<h4>Knowledge Processing Tools</h4>
+		•	NotebookLM: Used to turn dense source materials into digestible formats (glossary, quiz, audio overview).
+	•	Claude, ChatGPT, and Perplexity: Used as thought partners to clarify tough concepts, test understanding, and get alternative explanations for both code and theory.
+	For example: When I couldn’t wrap my head around attention weights in a multi-head setting, I would copy diagrams or code snippets into Claude and ask for simplified mental models or analogies. I often used ChatGPT for debugging and sanity-checking my implementation-based hypotheses.
+	* Colab, Github
+	
       </div>
 
       <div class="row">
