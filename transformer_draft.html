@@ -126,7 +126,7 @@
       </div>
 
       <div class="subsection">
-	<h3>Focus: Why AI Interpretability</h3>
+	<h3>The Pull: Why AI Interpretability Matters</h3>
 	<!--<p class="lead">-->
 	  <p>I've always enjoyed learning broadly and deeply—from podcasts and audiobooks on diverse topics to technical tutorials and online courses—driven mostly by curiosity and genuine enjoyment. But I also believe learning isn't optional in this era of exploding knowledge; it's directly related to our collective survival. The COVID pandemic illustrated this perfectly: without mRNA vaccine technology—built on decades of accumulated scientific knowledge—humanity could have faced an existential threat. </p>
 
@@ -144,12 +144,8 @@
       </div>
 
       <div class="subsection">
-        <h3>Approach: Experimental Learning & Communication</h3>
-
+        <h3>This Project: Learning Experiment</h3>
 	<p>This project also served as an experiment in applying recent insights from brain science to my learning approach. I'd learned that our brains work differently from muscles—the key isn't avoiding fatigue but leveraging how creativity emerges from the default mode network through novel combinations of existing knowledge. I wanted to challenge my traditional "deep focus for a few hours" approach, which I considered my core strength and was often praised for, and become more flexible with planning, revising scope on the fly rather than spending days perfecting initial plans.</p>
-
-	<p>[fill-in: Need to write why i thought writing this write up was important for communcation] </p?
-	
 	</div>      
 
       
@@ -242,9 +238,7 @@
 
       <div class="subsection">
         <h3>Transformer Architecture Deep Dive</h3>
-	<p> In this section, we focus on a decoder-only transformer, specifically using the same architecture and parameters as GPT-2 Small.
-	  [need to add reference]
-	</p>
+	  <p>In this section, we focus on a decoder-only transformer, specifically using the same architecture and parameters as GPT-2 Small <a href="#ref-radford2019" class="citation">[1]</a>.</p>
 
 
 	<figure class="centered_image">
@@ -272,7 +266,7 @@
 	
 
 	<h4>The Transformer Flow</h4>
-	See Fig.2 above starting from bottom to top
+	See Fig.2 above starting from bottom to top.
 
 	<h5>1. Tokens: From Text to Integers</h5>
         <p>Everything starts with converting human-readable text into integers through tokenization. This uses a method called Byte-Pair Encoding - we start with individual characters and iteratively merge the most common pairs. The result is a vocabulary of ~50,000 sub-word tokens that can represent any text. Each token gets mapped to a unique integer ID, which serves as an efficient key for the embedding lookup table.</p>
@@ -351,13 +345,10 @@
 
 	<h4>Brain Science vs. Mathematical Approaches</h4>
 	<p>Are we tackling the right problem? Is mechanical interpretability the best way to understand transformer decisions, or should we adopt more brain science methodologies? Given that neural networks aim to emulate brains, shouldn't we leverage neuroscience approaches more heavily?</p>
-
-	
       </div>
 
       <div class="subsection">
-        <h3>Conceptual Gaps</h3>
-        <!--<p>[Fill in: Areas where you see opportunities for new frameworks or approaches]</p>-->
+        <h3>Fundamental Puzzles</h3>
 	<h4>Grounded vs. Abstract Meaning</h4>
 	<p>Neural networks feel more mathematical than physical - in physics, information has specific meaning (e.g., particle spin states in wave functions correspond to measurable angular momentum), but in ML, any numerical representation is valid as long as it's useful for the task. Why should certain neuron firing patterns have inherent meaning? This fundamental question about the nature of representation needs addressing.</p>
 
@@ -391,26 +382,38 @@
 
       <!-- Appendix -->
       <div class="section-header">
-        <h2>Appendix</h2>
-	  <div class="insight-box">
-	    <p>[<em>As of 2025-08-17, this section is incomplete. Needs to be updated.</em>]</p>
-	  </div>
-          <h3>Tools and Resources</h3>
-	  <h3 id="learning-process-example">Example: Applying My Six-Step Learning Process</h3>
+	<h2>Appendix</h2>
+	<div class="insight-box">
+	  <p>[<em>As of 2025-08-17, this section is incomplete. Needs to be updated.</em>]</p>
+	</div>
+    
+	<!-- Add References as first subsection -->
+	<h3>References</h3>
+	<ol>
+	  <li id="ref-radford2019">
+            Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., & Sutskever, I. (2019). 
+            <em>Language Models are Unsupervised Multitask Learners</em>. OpenAI. 
+            <a href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf" target="_blank">PDF</a>
+	  </li>
+	  <!-- Add other references as needed -->
+	</ol>
+    
+	<h3>Tools and Resources</h3>
+	<h3 id="learning-process-example">Example: Applying My Six-Step Learning Process</h3>
 
-      <!-- Footer -->
-      <div class="starter-template">
-        <hr>
-        <p class="text-center">
-          <a href="projects.html" class="btn btn-default">← Back to Projects</a>
-        </p>
-        <p class="text-center">
-          Questions about this research? Find me on 
-          <a href="https://www.linkedin.com/in/kyungeun-lim" target="_blank">LinkedIn</a> |
-          <a href="https://github.com/kyungeunlim" target="_blank">GitHub</a>
-        </p>
-      </div>
-
+	<!-- Footer -->
+	<div class="starter-template">
+	  <hr>
+	  <p class="text-center">
+	    <a href="projects.html" class="btn btn-default">← Back to Projects</a>
+	  </p>
+	  <p class="text-center">
+	    Questions about this research? Find me on
+	    <a href="https://www.linkedin.com/in/kyungeun-lim" target="_blank">LinkedIn</a> |
+	    <a href="https://github.com/kyungeunlim" target="_blank">GitHub</a>
+	  </p>
+	</div>
+      
     </div><!-- /.container -->
 
     <!-- Bootstrap core JavaScript -->
