@@ -80,7 +80,6 @@
             padding: 2px 4px;
             border-radius: 3px;
       }
-
     </style>
 </head>
 
@@ -108,24 +107,24 @@
 
     <div class="container">
 
-      <!-- Header -->
-      <div class="starter-template">
-        <h1>From Physics to AI Safety: Cross-Disciplinary Questions for Transformer Interpretability</h1>
-        <p class="lead">A two-week deep dive into transformer architecture: a learning journey from fundamentals to physics-inspired research questions.
-	</p>
+<!-- Header -->
+<div class="starter-template">
+  <h1>From Physics to AI Safety: Cross-Disciplinary Questions for Transformer Interpretability</h1>
+  <p class="lead">A two-week deep dive into transformer architecture: a learning journey from fundamentals to physics-inspired research questions.</p>
+  
+  <!-- Reading Time -->
+  <p class="reading-time">
+    📖 <strong>Reading Time:</strong> Executive Summary (2 min) | Full Document (25-30 min)
+  </p>
+</div>
 
-	
-        <div class="draft-note">
-          <strong>Mostly complete except for Appendix section</strong>
-        </div>
-      </div>
+<!-- Executive Summary -->
+<div class="section-header">
+  <h2>Executive Summary</h2>
+</div>
+<p>This document presents a systematic exploration of transformer architecture through the lens of physics training, building foundational knowledge necessary for mechanistic interpretability research while demonstrating how cross-disciplinary approaches can accelerate understanding of complex AI systems. This work illustrates how domain expertise from physics can provide complementary perspectives on AI safety challenges, with research directions identified that could contribute to advancing interpretability methods, understanding scaling phenomena, and developing more rigorous approaches to analyzing AI systems.</p>
 
-      <!-- Executive Summary -->
-      <div class="section-header">
-	<h2>Executive Summary</h2>
-      </div>
-      <p>This document presents a systematic exploration of transformer architecture through the lens of physics training, building foundational knowledge necessary for mechanistic interpretability research while demonstrating how cross-disciplinary approaches can accelerate understanding of complex AI systems. This work illustrates how domain expertise from physics can provide complementary perspectives on AI safety challenges, with research directions identified that could contribute to advancing interpretability methods, understanding scaling phenomena, and developing more rigorous approaches to analyzing AI systems.</p>
-      
+
       <h3>Key Contributions</h3>
       <ul>
 	<li><strong>Physics-Informed Architecture Understanding:</strong> Applied physics frameworks (perturbation theory, many-body systems, statistical mechanics) to understand transformer mechanics, revealing analogies that clarify complex mechanisms like residual streams and attention patterns</li>
@@ -355,30 +354,37 @@
       <div class="subsection">
         <h3>Methodological Questions</h3>
         <!--<p>[Fill in: Questions about experimental design, measurement, analysis approaches that could benefit from physics thinking]</p>-->
+	
+	<h4>Measurement-Driven Discovery</h4>
+	<p>I've learned that many breakthroughs in brain science emerged from defining precise measurable quantities. Karl Friston's free energy principle exemplifies this pattern—by mathematically defining free energy as an information-theoretic quantity, he unified previously separate theories under one measurable framework <a href="#ref-friston-fep" class="citation">[4]</a>. Similarly, Geoffrey Hinton's work at University of Toronto applied Boltzmann distributions from statistical mechanics to create breakthrough AI architectures, recently recognized with the 2024 Nobel Prize in Physics <a href="#ref-hinton-nobel" class="citation">[5]</a>.
+	  <!--
+	Brain science continues advancing through better quantification, especially in consciousness research where <strong>Marcello Massimini's Perturbational Complexity Index (PCI)</strong> achieves 100% accuracy in distinguishing conscious from unconscious states <a href="#ref-massimini-pci" class="citation">[6]</a>, and <strong>Giulio Tononi's Integrated Information Theory</strong> defines Φ (Phi) as a measurable consciousness quantity <a href="#ref-tononi-iit" class="citation">[7]</a>.
+	  -->
+	  This pattern suggests we should think more systematically about what transformative measurable quantities might be waiting to be defined in AI interpretability research.</p>
+	
 	<h4>Measurement Strategy</h4>
-	<p>From an experimental physicist's perspective, <em>what</em> we measure is critical. Is loss really the best metric, or should we focus on token probabilities or layer weights? How do we systematically measure emergent behavior with scaling? With so many variables to experiment on, how can we quickly and systematically group or reduce them?</p>
+	<p>Also, from an experimental physicist's perspective, <em>what</em> we measure is critical. While cross-entropy loss is optimized for training, is it actually the best way to understand model behavior? Should we measure raw token probabilities, perplexity, or calibration metrics instead of loss? Beyond probability measures, should we also focus on attention patterns, activation magnitudes, or gradient flows? How do we systematically measure emergent behavior with scaling? With so many measurable variables, how can we efficiently extract the high-level patterns that capture the most meaningful information?</p>
 
-	<h4>Uncertainty vs. Deterministic Classification</h4>
+	<h4>Bayesian Approaches to Interpretability</h4>
 	<p>Physics emphasizes precise measurements with quantified uncertainties, while industry ML often defaults to deterministic outputs. Given that the human brain operates as a Bayesian inference engine—continuously updating beliefs from limited evidence—should interpretability research embrace more explicitly Bayesian frameworks? This could be particularly valuable for understanding how transformers handle infrequent but critical decisions where we can't gather sufficient statistics, similar to how humans make consequential life choices without the luxury of controlled trials.</p>
 
-	<h4>Brain Science vs. Mathematical Approaches</h4>
-	<p>Given that neural networks aim to emulate brains, shouldn't we leverage brain science approaches more heavily? (More detailed explantion need to be added)</p>
+
       </div>
 
       <div class="subsection">
         <h3>Fundamental Puzzles</h3>
 	<h4>Grounded vs. Abstract Meaning</h4>
-	<p>Neural networks feel more mathematical than physical - in physics, information has specific meaning (e.g., particle spin states in wave functions correspond to measurable angular momentum), but in ML, any numerical representation is valid as long as it's useful for the task. Why should certain neuron firing patterns have inherent meaning? This fundamental question about the nature of representation needs addressing.</p>
+	<p>Neural networks feel more mathematical than physical - in physics, information has specific meaning (e.g., particle spin states in wave functions correspond to measurable angular momentum), but in ML, any numerical representation is valid as long as it's useful for the task. Does certain neuron firing patterns have inherent meaning? This fundamental question about the nature of representation needs addressing.</p>
 
 
 	<h4>In-Context Learning</h4>
-	<p>How does transformer in-context learning compare to human rapid adaptation? The ability to change behavior without parameter updates seems more like pattern recognition than true learning—what can neuroscience tell us about this distinction?</p>
+	<p>How does transformer in-context learning compare to human rapid adaptation? The ability to change behavior without parameter updates seems more like pattern recognition than true learning—what can brain science tell us about this distinction?</p>
       </div>
 
         <div class="subsection">
           <h3>Thoughts Under Fermentation</h3>
 	  <h4>Residual Stream Design Choice</h4>
-	  <p>It seems residual streams' additive structure allows interpretability. This seems to be a good choice, but I wonder if there are any other structural ways to allow interpretability more easily with different design setups.</p>
+	  <p>The linear additivity of residual streams makes interpretability possible. This seems to be a good choice, but I wonder if there are any other structural ways to allow interpretability more easily with different design setups.</p>
 	</div>
 	
       <!-- Section 5: Reflection & Next Steps 
@@ -412,7 +418,7 @@
 	<!-- Add References as first subsection -->
 	<h3>References</h3>
 	<ol>
-	  <li id="ref-park-youtube">
+	  <li id="ref-park-talentcode">
 	    지식 인사이드. "20대로 돌아가면 이것부터 읽을 겁니다." 뇌과학으로 입증된 최고의 책 1권 (박문호 박사 1부). YouTube. 
 	    <a href="https://www.youtube.com/watch?v=79crR-kUGrI" target="_blank">https://www.youtube.com/watch?v=79crR-kUGrI</a>
 	  </li>
@@ -423,6 +429,18 @@
             Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., & Sutskever, I. (2019). 
             <em>Language Models are Unsupervised Multitask Learners</em>. OpenAI. 
             <a href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf" target="_blank">PDF</a>
+	  </li>
+	  <li id="ref-friston-fep">
+	    Friston, K. (2010). The free-energy principle: a unified brain theory? <em>Nature Reviews Neuroscience</em>, 11(2), 127-138.
+	  </li>
+	  <li id="ref-hinton-nobel">
+	    The Nobel Prize in Physics 2024. <em>NobelPrize.org</em>. <a href="https://www.nobelprize.org/prizes/physics/2024/press-release/" target="_blank">Press Release</a>
+	  </li>
+	  <li id="ref-massimini-pci">
+	    Casali, A. G., et al. (2013). A theoretically based index of consciousness independent of sensory processing and behavior. <em>Science Translational Medicine</em>, 5(198), 198ra105.
+	  </li>
+	  <li id="ref-tononi-iit">
+	    Tononi, G. (2008). Integrated information theory. <em>Scholarpedia</em>, 3(3), 4164.
 	  </li>
 	  
 	  <!-- Add other references as needed -->
