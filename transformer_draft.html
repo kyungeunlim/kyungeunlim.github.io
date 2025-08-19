@@ -24,6 +24,11 @@
         margin-top: 25px;
         margin-bottom: 15px;
       }
+      .container ul li {
+	  font-size: 16px;
+	  line-height: 1.6;
+	  margin-bottom: 8px;
+      }
       .insight-box {
         background-color: #f8f9fa;
         border-left: 4px solid #337ab7;
@@ -55,7 +60,8 @@
             color: #666666;
             margin-top: 20px;
             margin-bottom: 8px;
-        }
+      }
+      
       .subsection p, .container p {
         font-size: 16px;
         line-height: 1.6;
@@ -73,8 +79,9 @@
             background-color: #f8f9fa;
             padding: 2px 4px;
             border-radius: 3px;
-        }	
-  </style>
+      }
+
+    </style>
 </head>
 
 <body>
@@ -104,23 +111,32 @@
       <!-- Header -->
       <div class="starter-template">
         <h1>From Physics to AI Safety: Cross-Disciplinary Questions for Transformer Interpretability</h1>
-        <p class="lead">A two-week deep dive into transformer architecture learning journey from fundamentals to physics-inspired research questions.
+        <p class="lead">A two-week deep dive into transformer architecture: a learning journey from fundamentals to physics-inspired research questions.
 	</p>
 
 	
         <div class="draft-note">
-          <strong>Work in Progress (95% Complete)</strong>
+          <strong>Mostly complete with missing info in Appendix</strong>
         </div>
       </div>
 
-      <!-- Executive Summary - To be written last -->
+      <!-- Executive Summary -->
       <div class="section-header">
-        <h2>Executive Summary</h2>
+	<h2>Executive Summary</h2>
       </div>
-      <div class="insight-box">
-        <p><em>[Will summarize key insights, physics connections discovered, and research questions formulated]</em></p>
-      </div>
-
+      <p>This document presents a systematic exploration of transformer architecture through the lens of physics training, building foundational knowledge necessary for mechanistic interpretability research while demonstrating how cross-disciplinary approaches can accelerate understanding of complex AI systems. This work illustrates how domain expertise from physics can provide complementary perspectives on AI safety challenges, with research directions identified that could contribute to advancing interpretability methods, understanding scaling phenomena, and developing more rigorous approaches to analyzing AI systems.</p>
+      
+      <h3>Key Contributions</h3>
+      <ul>
+	<li><strong>Physics-Informed Architecture Understanding:</strong> Applied physics frameworks (perturbation theory, many-body systems, statistical mechanics) to understand transformer mechanics, revealing analogies that clarify complex mechanisms like residual streams and attention patterns</li>
+  
+	<li><strong>Systematic Learning Methodology:</strong> Developed and documented a transferable 6-step process for efficiently acquiring expertise across technical domains—valuable for researchers transitioning into AI safety from other fields</li>
+  
+	<li><strong>Physics-Inspired Research Directions:</strong> Identified potential research avenues including group theory applications to neural circuit classification, scaling laws as phase transitions, and statistical mechanics approaches to emergent behavior—questions that may offer fresh methodological angles for interpretability research</li>
+  
+	<li><strong>Technical Implementation:</strong> Systematically worked through transformer implementations with hands-on exploration of attention mechanisms, testing different inputs and modifications to build deep understanding of architectural components.</li>
+      </ul>
+      
       <!-- Section 1: Motivation -->
       <div class="section-header">
         <h2>1. Why: Motivation for This Deep Dive</h2>
@@ -129,9 +145,9 @@
       <div class="subsection">
 	<h3>The Pull: Why AI Interpretability Matters</h3>
 	<!--<p class="lead">-->
-	  <p>I've always enjoyed learning broadly and deeply—from podcasts and audiobooks on diverse topics to technical tutorials and online courses—driven mostly by curiosity and genuine enjoyment. But I also believe learning isn't optional in this era of exploding knowledge; it's directly related to our collective survival. The COVID pandemic illustrated this perfectly: without mRNA vaccine technology—built on decades of accumulated scientific knowledge—humanity could have faced an existential threat. </p>
+	<p> I've always enjoyed learning broadly and deeply—from podcasts and audiobooks spanning big history, brain science, and philosophy to technical tutorials and online courses—driven mostly by curiosity and genuine enjoyment. This habit of connecting insights across seemingly unrelated domains has shaped how I approach complex problems: looking for patterns that emerge when viewing challenges through multiple disciplinary lenses. But this goes beyond personal curiosity—I also believe learning isn't optional in this era of exploding knowledge; it's directly related to our collective survival. The COVID pandemic illustrated this perfectly: without mRNA vaccine technology—built on decades of accumulated scientific knowledge across multiple fields—humanity could have faced an existential threat.</p>
 
-	  <p>The rapidly exploding pace of new knowledge made me realize I need to be more efficient at learning itself: I've been pondering what would be the most effective way of learning how to learn. In addition to it, recently experiencing the loss of loved ones and witnessing devastating events so close to home reinforced that time is our scarcest resource. </p>
+	<p>Yet this necessity faces a daunting reality: The rapidly exploding pace of new knowledge made me realize I need to be more efficient at learning itself—I've been pondering what would be the most effective way of learning how to learn. Additionally, recently experiencing the loss of loved ones and witnessing devastating events so close to home reinforced that time is our scarcest resource. </p>
 
 	  <p>These convergent realizations created a dilemma: I can learn forever and find joy in it, but what's the point if I don't use it for something meaningful? This led me to reflect deeply on what problems I feel strongly enough about to be worth my limited time, and how to balance leveraging my existing knowledge with efficiently adopting new tools to tackle challenges that matter.</p>
 
@@ -187,7 +203,7 @@
         <p>With my physicist mindset, I had this picture in mind: progressively building up the dimensions of information from previous steps. Markov chains utilize one previous step to make predictions, Fibonacci-style problems utilize two previous steps, and time series models utilize multiple previous steps with exponentially decaying weights, focusing more on recent information. RNNs represent the next evolution where we can theoretically use all previous information in a sequence, but they suffer from vanishing gradients over long distances. LSTMs solved this through sophisticated gating mechanisms that can selectively remember and forget information across long sequences. Attention mechanisms represent the latest breakthrough where I don't have to process information linearly—I can intelligently focus on the most relevant parts of the entire sequence simultaneously, making optimal use of multiple previous steps. All of these advances were only possible with the development of powerful computers, allowing many complex operations within much shorter times (similar to how Bayesian inference became practical due to better computing power). Like almost any technological evolution, this represents repeated attempts to solve the same fundamental problem—understanding sequential patterns—by addressing the limitations of previous methodologies with advancing computational capabilities.</p>
 
         <h4>Previous Transformer Exposure</h4>
-        <p>I also skimmed through the "Attention is All You Need" paper years ago and understood that it essentially removed the need for RNNs in many sequence modeling tasks. More recently, I also took Andrew Ng's Coursera courses to have better understanding of both neural networks and deep learning fundamentals as well as generative AI with language models. These were also to gain hands-on implementation experience and build basic knowledge of the necessary tools.</p>
+        <p>I also skimmed through the "Attention is All You Need" paper years ago and understood that it essentially removed the need for RNNs in many sequence modeling tasks. More recently, I also took Andrew Ng's Coursera courses to have a better understanding of both neural networks and deep learning fundamentals as well as generative AI with language models. These were also to gain hands-on implementation experience and build basic knowledge of the necessary tools.</p>
 
         <h4>Practical Experience</h4>
 	<p>I led the development of P-Rex, a personalized recommendation system using XGBoost at CloudTrucks, which gave me hands-on experience with feature engineering and production ML deployment. Later, I built an LSTM-based forecasting model, providing exposure to PyTorch and neural network implementation. My work with PostgreSQL and recommendation systems for search ranking also familiarized me with query-key-value concepts used for attention mechanisms in Transformers, though I hadn't worked directly with Transformer architectures previously.</p>
@@ -209,7 +225,7 @@
 
       <div class="subsection">
         <h3>Systematic Learning Approach</h3>
-	<p>My approach to learning something fundamentally new—especially at the cutting edge—relies on structuring the experience to both accelerate early understanding and build deep intuition over time. I’ve refined this process through years of transitioning between disciplines, and for this deep dive, I leaned heavily on strategies rooted in physics training, modular thinking, and cognitive neuroscience insights. I've distilled this into a repeatable six-step process:</p>
+	<p>My approach to learning something fundamentally new—especially at the cutting edge—relies on structuring the experience to both accelerate early understanding and build deep intuition over time. I’ve refined this process through years of transitioning between disciplines, and for this deep dive, I leaned heavily on strategies rooted in physics training, modular thinking, brain science insights, and industry experience with rapid iteration cycles. I've distilled this into a repeatable six-step process:</p>
 
 	<h4>1. Learn terminology & connect to existing knowledge</h4>
 	<p>Memorize new concepts with clear definitions to create basic building blocks—I then only need to figure out hierarchical relationships among them. This follows the Rumpelstiltskin principle: you can't truly understand what you can't name. I also noticed that as I accumulate knowledge across fields, I increasingly spot similar concepts used in different domains.</p>
@@ -234,7 +250,7 @@
 	
       <!-- Section 3: Current Understanding & Physics Parallels -->
       <div class="section-header">
-        <h2>3. What: A Physicist’s Understanding of Transformers</h2
+        <h2>3. What: A Physicist’s Understanding of Transformers</h2>
       </div>
 
       <div class="subsection">
@@ -247,7 +263,7 @@
 		<img src="static/transformer/transformer_flowchart_300.drawio.png" width="300px">
 	      </center>
 	     <figcaption style="text-align: center;">
-	    Fig.2: Flowchart of the Deconder-Only Transformer. It is slightly modified from the figure shown <a href="https://colab.research.google.com/github/neelnanda-io/Easy-Transformer/blob/clean-transformer-demo/Clean_Transformer_Demo_Template.ipynb">here</a>.
+	    Fig.2: Flowchart of the Decoder-Only Transformer. It is slightly modified from the figure shown <a href="https://colab.research.google.com/github/neelnanda-io/Easy-Transformer/blob/clean-transformer-demo/Clean_Transformer_Demo_Template.ipynb">here</a>.
 	  </figcaption>
 	</figure>
 	<br>
@@ -277,7 +293,7 @@
 
 
         <h5>3. Positional Embeddings: Adding Sequence Information</h5>
-        <p>Since attention is content-based rather than position-based, we need to explicitly tell the model where each token sits in the sequence. We learn another lookup table that maps position indices to vectors, then <em>add</em> these to the token embeddings. The key insight that initially confused me: how does adding positional embeddings to token embeddings not create collisons? The answer lies in the high dimensionality - with embedding vectors of length 768, the probability of collision becomes vanishingly small. This is similar to how CRISPR achieved precision in gene editing: while earlier techniques used shorter recognition sequences (higher collision risk), CRISPR uses ~20-nucleotide guide sequences, making the probability of accidentally matching the wrong genomic location negligibly small. </p>
+        <p>Since attention is content-based rather than position-based, we need to explicitly tell the model where each token sits in the sequence. We learn another lookup table that maps position indices to vectors, then <em>add</em> these to the token embeddings. The key insight that initially confused me: how does adding positional embeddings to token embeddings not create collisions? The answer lies in the high dimensionality - with embedding vectors of length 768, the probability of collision becomes vanishingly small. This is similar to how CRISPR achieved precision in gene editing: while earlier techniques used shorter recognition sequences (higher collision risk), CRISPR uses ~20-nucleotide guide sequences, making the probability of accidentally matching the wrong genomic location negligibly small. </p>
 
         <h5>4. Attention Mechanism: Intelligent Information Routing</h5>
         <p>This is where the magic happens. For each token, the model computes three vectors: Query (what am I looking for?), Key (what do I contain?), and Value (what information should I pass along?). The similarity between Query and Key vectors determines how much attention each token pays to every other token in the sequence. (During implementation, I discovered that Einstein summation order doesn't affect the results—a satisfying confirmation that dot product commutativity holds even in these complex operations.)</p>
