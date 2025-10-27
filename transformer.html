@@ -29,6 +29,10 @@
 	  line-height: 1.6;
 	  margin-bottom: 8px;
       }
+      .subsection ul {
+	  list-style-type: none;
+	  padding-left: 0;
+      }
       .insight-box {
         background-color: #f8f9fa;
         border-left: 4px solid #337ab7;
@@ -122,25 +126,44 @@
 <div class="section-header">
   <h2>Executive Summary</h2>
 </div>
+
 <p>This document presents a systematic exploration of transformer architecture through the lens of physics training, building foundational knowledge necessary for mechanistic interpretability research while demonstrating how cross-disciplinary approaches can accelerate understanding of complex AI systems. This work illustrates how domain expertise from physics can provide complementary perspectives on AI safety challenges, with research directions identified that could contribute to advancing interpretability methods, understanding scaling phenomena, and developing more rigorous approaches to analyzing AI systems.</p>
 
+<p>Below are section highlights to help readers navigate directly to the most relevant content.</p>
 
-      <h3>Key Contributions</h3>
+      <div class ="subsection">
+	<h3>Section Highlights</h3>
       <ul>
-	<li><strong>Cross-Disciplinary Architecture Understanding:</strong> Applied frameworks from physics, biology, and machine learning to understand transformer mechanics, revealing analogies that clarify complex mechanisms like residual streams, positional embeddings, and attention patterns.</li>
+	<!--<li><strong>Physics-Inspired Research Directions:</strong>-->
+	<li><strong><a href="#research-questions"> 4. So What?: Physics-Inspired Open Questions </a>:</strong>
+	  Identified potential research avenues including group theory applications to neural circuit classification, statistical mechanics approaches to many-body neural systems, and exploring the intersection between scaling laws and phase transitions—questions that may offer fresh methodological angles for interpretability research.</li>
+	
+	<!--<li><strong>Cross-Disciplinary Architecture Understanding:</strong>-->
+	  <li><strong><a href="#x-discipl-understanding"> 3. What: A Cross-Disciplinary Understanding of Transformers </a>:</strong>  Applied frameworks from physics, biology, and machine learning to understand transformer mechanics, revealing analogies that clarify complex mechanisms like residual streams, positional embeddings, and attention patterns.</li>
   
-	<li><strong>Systematic Learning Methodology:</strong> Designed and documented a transferable 6-step process for efficiently acquiring expertise across technical domains—valuable for researchers transitioning into AI safety from other fields.</li>
-  
-	<li><strong>Physics-Inspired Research Directions:</strong> Identified potential research avenues including group theory applications to neural circuit classification, statistical mechanics approaches to many-body neural systems, and exploring the intersection between scaling laws and phase transitions—questions that may offer fresh methodological angles for interpretability research.</li>
-  
+	<!--<li><strong>Systematic Learning Methodology:</strong>-->
+	  <li><strong><a href="#learning-methodology"> 2. How: My Learning Methodology </a>:</strong> Designed and documented a transferable 6-step process for efficiently acquiring expertise across technical domains—valuable for researchers transitioning into AI safety from other fields.</li>
+
+	  <li><strong><a href="#motivation"> 1. Why: Motivation for This Deep Dive </a>:</strong> Shares the personal catalyst for transitioning to AI safety—how experiencing loss prompted deep reflection on meaningful work, leading to the realization that physics training in systematic problem-solving could address critical AI safety challenges.</li>
+  	</div>      
+
+<!--
 	<li><strong>Technical Implementation:</strong> Systematically worked through transformer implementations with hands-on exploration of attention mechanisms, testing different inputs and modifications to build deep understanding of architectural components.</li>
-      </ul>
+      </ul>-->
       
       <!-- Section 1: Motivation -->
-      <div class="section-header">
+      <div class="section-header" id="motivation">
         <h2>1. Why: Motivation for This Deep Dive</h2>
       </div>
 
+      <div class="subsection">
+        <h3>Planning: Two-Week Timeline & Scope</h3>
+	
+	<p>With upcoming travel scheduled in four weeks, I saw an opportunity to test whether interpretability research was the right direction for my career transition. Drawing from my previous ultralearning project experience from a few months earlier, I allocated two weeks for deep exploration, one week for writing, and kept the final week as contingency—a more realistic timeline than my perfectionist tendencies usually allow.</p>
+
+	<p>The biggest challenge was that the scope would entirely depend on how efficiently I could learn the fundamentals. Based on early conversations with friends familiar with the field, I pivoted from attempting meaningful analysis using existing methods to focusing on building a solid foundational understanding. I reduced the scope to what I could learn effectively and to the unique perspectives or questions I might contribute through a physicist’s lens. This means I intentionally left out existing interpretability research, which I plan to revisit in future work.</p>
+      </div>
+      
       <div class="subsection">
 	<h3>The Pull: Why AI Interpretability Matters</h3>
 	<!--<p class="lead">-->
@@ -165,18 +188,10 @@
 	</div>      
 
       
-      <div class="subsection">
-        <h3>Planning: Two-Week Timeline & Scope</h3>
-	
-	<p>With upcoming travel scheduled in four weeks, I saw an opportunity to test whether interpretability research was the right direction for my career transition. Drawing from my previous ultra learning experience, I allocated two weeks for deep exploration, one week for writing, and kept the final week as contingency—a more realistic timeline than my perfectionist tendencies usually allow.</p>
 
-	<p>The biggest challenge was that the scope would entirely depend on how efficiently I could learn the fundamentals. Based on early conversations with friends familiar with the field, I pivoted from attempting meaningful analysis using existing methods to focusing on building a solid foundational understanding. I reduced the scope to what I could learn effectively and to the unique perspectives or questions I might contribute through a physicist’s lens. This means I intentionally left out existing interpretability research, which I plan to revisit in future work.</p>
-
-
-      </div>
 
       <!-- Section 2: Learning Methodology -->
-      <div class="section-header">
+      <div class="section-header" id="learning-methodology">
         <h2>2. How: My Learning Methodology</h2>
       </div>
 
@@ -243,7 +258,7 @@
 	<p>A detailed walkthrough of applying this methodology is provided in the <a href="#learning-process-example">Appendix</a>.</p>	
 	
       <!-- Section 3: Current Understanding & Physics Parallels -->
-      <div class="section-header">
+      <div class="section-header" id="x-discipl-understanding">
         <h2>3. What: A Cross-Disciplinary Understanding of Transformers</h2>
       </div>
 
@@ -328,7 +343,7 @@
 
       
       <!-- Section 4: Research Questions -->
-      <div class="section-header">
+      <div class="section-header" id="research-questions">
         <h2>4. So What?: Physics-Inspired Open Questions</h2>
       </div>
       <p>The following research directions reflect physics-informed perspectives and open questions that I have developed during my exploration; while they may overlap with prior work, I believe they highlight useful angles for further investigation.</p>
