@@ -24,10 +24,14 @@
         margin-top: 25px;
         margin-bottom: 15px;
       }
-      .container ul li {
+      .subsection ul li {	  
 	  font-size: 16px;
 	  line-height: 1.6;
 	  margin-bottom: 8px;
+      }
+      .subsection ul {
+	  list-style-type: none;
+	  padding-left: 0;
       }
       .insight-box {
         background-color: #f8f9fa;
@@ -80,7 +84,6 @@
             padding: 2px 4px;
             border-radius: 3px;
       }
-
     </style>
 </head>
 
@@ -98,58 +101,87 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="index.html">About</a></li> 
-            <li><a href="projects.html">Projects</a></li> 
+            <li class="active"><a href="projects.html">Projects</a></li> 
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
-<br><br><br>
+    <br><br><br>
 
     <div class="container">
-
-      <!-- Header -->
+      <!-- Back to Projects Link -->
+      <!--
       <div class="starter-template">
-        <h1>From Physics to AI Safety: Cross-Disciplinary Questions for Transformer Interpretability</h1>
-        <p class="lead">A two-week deep dive into transformer architecture: a learning journey from fundamentals to physics-inspired research questions.
-	</p>
-
-	
-        <div class="draft-note">
-          <strong>Mostly complete with missing info in Appendix</strong>
-        </div>
+        <a href="projects.html" class="btn btn-default">
+          <span class="glyphicon glyphicon-arrow-left"></span> Back to All Projects
+        </a>
       </div>
-
-      <!-- Executive Summary -->
-      <div class="section-header">
-	<h2>Executive Summary</h2>
-      </div>
-      <p>This document presents a systematic exploration of transformer architecture through the lens of physics training, building foundational knowledge necessary for mechanistic interpretability research while demonstrating how cross-disciplinary approaches can accelerate understanding of complex AI systems. This work illustrates how domain expertise from physics can provide complementary perspectives on AI safety challenges, with research directions identified that could contribute to advancing interpretability methods, understanding scaling phenomena, and developing more rigorous approaches to analyzing AI systems.</p>
+      -->
       
-      <h3>Key Contributions</h3>
+<!-- Header -->
+<div class="starter-template">
+  <h1>From Physics to AI Safety: Cross-Disciplinary Questions for Transformer Interpretability</h1>
+  <p class="lead">A two-week deep dive into transformer architecture: a learning journey from fundamentals to physics-inspired research questions.</p>
+  
+  <!-- Reading Time -->
+  <p class="reading-time">
+    📖 <strong>Reading Time:</strong> Executive Summary (2 min) | Full Document (25-30 min)
+  </p>
+</div>
+
+<!-- Executive Summary -->
+<div class="section-header">
+  <h2>Executive Summary</h2>
+</div>
+
+<p>This document presents a systematic exploration of transformer architecture through the lens of physics training, building foundational knowledge necessary for mechanistic interpretability research while demonstrating how cross-disciplinary approaches can accelerate understanding of complex AI systems. This work illustrates how domain expertise from physics can provide complementary perspectives on AI safety challenges, with research directions identified that could contribute to advancing interpretability methods, understanding scaling phenomena, and developing more rigorous approaches to analyzing AI systems.</p>
+
+<p>Below are section highlights to help readers navigate directly to the most relevant content.</p>
+
+      <div class ="subsection">
+	<h3>Section Highlights</h3>
       <ul>
-	<li><strong>Physics-Informed Architecture Understanding:</strong> Applied physics frameworks (perturbation theory, many-body systems, statistical mechanics) to understand transformer mechanics, revealing analogies that clarify complex mechanisms like residual streams and attention patterns</li>
+	<!--<li><strong>Physics-Inspired Research Directions:</strong>-->
+	<li><strong><a href="#research-questions"> 4. So What?: Physics-Inspired Open Questions</a>:</strong> Identified potential research avenues including group theory applications to neural circuit classification, statistical mechanics approaches to many-body neural systems, and exploring the intersection between scaling laws and phase transitions—questions that may offer fresh methodological angles for interpretability research.</li>
+	
+	<!--<li><strong>Cross-Disciplinary Architecture Understanding:</strong>-->
+	  <li><strong><a href="#x-discipl-understanding"> 3. What: A Cross-Disciplinary Understanding of Transformers</a>:</strong>  Applied frameworks from physics, biology, and machine learning to understand transformer mechanics, revealing analogies that clarify complex mechanisms like residual streams, positional embeddings, and attention patterns.</li>
   
-	<li><strong>Systematic Learning Methodology:</strong> Developed and documented a transferable 6-step process for efficiently acquiring expertise across technical domains—valuable for researchers transitioning into AI safety from other fields</li>
-  
-	<li><strong>Physics-Inspired Research Directions:</strong> Identified potential research avenues including group theory applications to neural circuit classification, scaling laws as phase transitions, and statistical mechanics approaches to emergent behavior—questions that may offer fresh methodological angles for interpretability research</li>
-  
+	<!--<li><strong>Systematic Learning Methodology:</strong>-->
+	  <li><strong><a href="#learning-methodology"> 2. How: My Learning Methodology</a>:</strong> Designed and documented a transferable 6-step process for efficiently acquiring expertise across technical domains—valuable for researchers transitioning into AI safety from other fields.</li>
+
+
+	<li><strong><a href="#motivation">1. Why: Motivation for This Deep Dive</a>:</strong> Shares how experiencing loss prompted reflection on meaningful work, leading to AI safety research. Details the strategic planning process: scoping a realistic two-week timeline focused on foundational understanding and physics-informed perspectives.
+	    </li>
+
+      </div>      
+
+<!--
 	<li><strong>Technical Implementation:</strong> Systematically worked through transformer implementations with hands-on exploration of attention mechanisms, testing different inputs and modifications to build deep understanding of architectural components.</li>
-      </ul>
+      </ul>-->
       
       <!-- Section 1: Motivation -->
-      <div class="section-header">
+      <div class="section-header" id="motivation">
         <h2>1. Why: Motivation for This Deep Dive</h2>
       </div>
 
       <div class="subsection">
+        <h3>Planning: Two-Week Timeline & Scope</h3>
+	
+	<p>With upcoming travel scheduled in four weeks, I saw an opportunity to test whether interpretability research was the right direction for my career transition. Drawing from my previous ultralearning project experience from a few months earlier, I allocated two weeks for deep exploration, one week for writing, and kept the final week as contingency—a more realistic timeline than my perfectionist tendencies usually allow.</p>
+
+	<p>The biggest challenge was that the scope would entirely depend on how efficiently I could learn the fundamentals. Based on early conversations with friends familiar with the field, I pivoted from attempting meaningful analysis using existing methods to focusing on building a solid foundational understanding. I reduced the scope to what I could learn effectively and to the unique perspectives or questions I might contribute through a physicist’s lens. This means I intentionally left out existing interpretability research, which I plan to revisit in future work.</p>
+      </div>
+      
+      <div class="subsection">
 	<h3>The Pull: Why AI Interpretability Matters</h3>
 	<!--<p class="lead">-->
-	<p> I've always enjoyed learning broadly and deeply—from podcasts and audiobooks spanning big history, brain science, and philosophy to technical tutorials and online courses—driven mostly by curiosity and genuine enjoyment. This habit of connecting insights across seemingly unrelated domains has shaped how I approach complex problems: looking for patterns that emerge when viewing challenges through multiple disciplinary lenses. But this goes beyond personal curiosity—I also believe learning isn't optional in this era of exploding knowledge; it's directly related to our collective survival. The COVID pandemic illustrated this perfectly: without mRNA vaccine technology—built on decades of accumulated scientific knowledge across multiple fields—humanity could have faced an existential threat.</p>
+	<p> I've always enjoyed learning broadly and deeply—from podcasts and audiobooks spanning big history, brain science, and philosophy to technical tutorials and online courses—driven mostly by curiosity and genuine enjoyment. This habit of connecting insights across seemingly unrelated domains has shaped how I approach complex problems: looking for patterns that emerge when viewing challenges through multiple disciplinary lenses. But this goes beyond personal curiosity—I also believe learning isn't optional; it's directly related to our collective survival. The COVID pandemic illustrated this perfectly: without mRNA vaccine technology—built on decades of accumulated scientific knowledge across multiple fields—humanity could have faced an existential threat.</p>
 
-	<p>Yet this necessity faces a daunting reality: The rapidly exploding pace of new knowledge made me realize I need to be more efficient at learning itself—I've been pondering what would be the most effective way of learning how to learn. Additionally, recently experiencing the loss of loved ones and witnessing devastating events so close to home reinforced that time is our scarcest resource. </p>
-
-	  <p>These convergent realizations created a dilemma: I can learn forever and find joy in it, but what's the point if I don't use it for something meaningful? This led me to reflect deeply on what problems I feel strongly enough about to be worth my limited time, and how to balance leveraging my existing knowledge with efficiently adopting new tools to tackle challenges that matter.</p>
+	<p>At the same time, the rapidly exploding pace of new knowledge made me realize I need to learn more efficiently to keep up, while also finding more effective approaches to learning how to learn. Additionally, recently experiencing the loss of loved ones and witnessing devastating events so close to home reinforced that time is our scarcest resource.</p>
+	
+	 <p>These convergent realizations created a dilemma: I can learn forever and find joy in it, but what's the point if I don't use it for something meaningful? This led me to reflect deeply on what problems I feel strongly enough about to be worth my limited time, and how to balance leveraging my existing knowledge with efficiently adopting new tools to tackle challenges that matter.</p>
 
 	<p>The answer traces back to questions that have fascinated me since watching "Ghost in the Shell" in the 90s: What makes a human human? My early conclusion was "memory"—and after learning more about brain science, I'm convinced this intuition was correct. Memory is fundamental to emotion, action, identity, and consciousness. Recent films like "After Yang" have renewed these questions about the boundary between human and AI.</p>
 
@@ -166,23 +198,10 @@
 	</div>      
 
       
-      <div class="subsection">
-        <h3>Planning: Two-Week Timeline & Scope</h3>
-	
-	<p>With upcoming travel scheduled in four weeks, I saw an opportunity to test whether interpretability research was the right direction for my career transition. Drawing from my previous ultra learning experience, I allocated two weeks for deep exploration, one week for writing, and kept the final week as contingency—a more realistic timeline than my perfectionist tendencies usually allow.</p>
 
-	<p>The biggest challenge was that the scope would entirely depend on how efficiently I could learn the fundamentals. Based on early conversations with friends familiar with the field, I pivoted from attempting meaningful analysis using existing methods to focusing on building a solid foundational understanding. I reduced the scope to what I could learn effectively and to the unique perspectives or questions I might contribute through a physicist’s lens. This means I intentionally left out existing interpretability research, which I plan to revisit in future work.</p>
-
-
-      </div>
-      <!--
-      <div class="subsection">
-        <h3>Anthropic's Interpretability Agenda</h3>
-        <p>[Fill in: What drew me to their specific approach - mechanistic interpretability, production model focus, circuit analysis methods, I might skip]</p>
-      </div> -->
 
       <!-- Section 2: Learning Methodology -->
-      <div class="section-header">
+      <div class="section-header" id="learning-methodology">
         <h2>2. How: My Learning Methodology</h2>
       </div>
 
@@ -225,19 +244,19 @@
 
       <div class="subsection">
         <h3>Systematic Learning Approach</h3>
-	<p>My approach to learning something fundamentally new—especially at the cutting edge—relies on structuring the experience to both accelerate early understanding and build deep intuition over time. I’ve refined this process through years of transitioning between disciplines, and for this deep dive, I leaned heavily on strategies rooted in physics training, modular thinking, brain science insights, and industry experience with rapid iteration cycles. I've distilled this into a repeatable six-step process:</p>
+	<p>My approach to learning something fundamentally new—especially at the cutting edge—relies on structuring the experience to both accelerate early understanding and build deep intuition over time. I've refined this process through years of transitioning between disciplines, and for this deep dive, I leaned heavily on strategies rooted in physics training, modular thinking, brain science insights, and industry experience with rapid iteration cycles. I also specifically sought effective learning resources, and I've distilled this into a repeatable six-step process:</p>
 
 	<h4>1. Learn terminology & connect to existing knowledge</h4>
 	<p>Memorize new concepts with clear definitions to create basic building blocks—I then only need to figure out hierarchical relationships among them. This follows the Rumpelstiltskin principle: you can't truly understand what you can't name. I also noticed that as I accumulate knowledge across fields, I increasingly spot similar concepts used in different domains.</p>
 
 	<h4>2. Map hierarchical structure</h4>
 	<p>In books or papers, this is equivalent to understanding the table of contents. This is where I personally benefit most from LLMs. When deciding whether to read a paper, I ask: 1) summarize the whole paper in a few bullet points, 2) what are the strengths and weaknesses, and 3) how would you improve it? I learned this framework from <a href="https://ko.wikipedia.org/wiki/박태웅_(1963년)" target="_blank">Tae-woong Park</a>'s YouTube videos and initially applied it by manually prompting various LLMs. However, as AI tools evolve rapidly, I've since streamlined this process—I now delegate these questions directly to <a href="https://notebooklm.google.com/" target="_blank">NotebookLM</a>, which has become my default tool for this type of analysis.</p>
-	
-	<h4>3. Skim fast, focus on gaps</h4>
-	<p>This is based on the fact that I already have accumulated fundamental knowledge from other work (basic math, science concepts, etc.). To be efficient about learning new things, I can skim through everything at high speed, then focus on parts I don't understand, get stuck on, or find insightful.</p>
 
+	<h4>3. Skim fast, focus on gaps</h4>
+	<p>This is based on the fact that I already have accumulated fundamental knowledge from other work (basic math, science concepts, etc.). To be efficient about learning new things, I can skim through everything at high speed, then focus on parts I don't understand, get stuck on, or find insightful. This approach was inspired by insights from Dr. Moon-ho Park's YouTube review <a href="#ref-park-talentcode" class="citation">[1]</a> of <em>The Talent Code</em> <a href="#ref-talent-code" class="citation">[2]</a>.</p>
+	
 	<h4>4. Test with hands-on coding</h4>
-	<p>This is hypothesis testing—understanding output with different inputs builds real understanding and shows how I can materialize/execute ideas.</p>
+	<p>This is empirical validation—understanding output with different inputs builds real understanding and shows how I can materialize/execute ideas.</p>
 
 	<h4>5. Create visual summaries</h4>
 	<p>From my academic experience, I learned that eventually any research result is summarized as either a figure or a table. Diagrams are visual aids I often use to communicate complicated concepts with team members when presenting projects.</p>
@@ -249,13 +268,13 @@
 	<p>A detailed walkthrough of applying this methodology is provided in the <a href="#learning-process-example">Appendix</a>.</p>	
 	
       <!-- Section 3: Current Understanding & Physics Parallels -->
-      <div class="section-header">
-        <h2>3. What: A Physicist’s Understanding of Transformers</h2>
+      <div class="section-header" id="x-discipl-understanding">
+        <h2>3. What: A Cross-Disciplinary Understanding of Transformers</h2>
       </div>
 
       <div class="subsection">
         <h3>Transformer Architecture Deep Dive</h3>
-	  <p>In this section, we focus on a decoder-only transformer, specifically using the same architecture and parameters as GPT-2 Small <a href="#ref-radford2019" class="citation">[1]</a>.</p>
+	  <p>In this section, we focus on a decoder-only transformer, specifically using the same architecture and parameters as GPT-2 Small <a href="#ref-radford2019" class="citation">[3]</a>.</p>
 
 
 	<figure class="centered_image">
@@ -296,14 +315,16 @@
         <p>Since attention is content-based rather than position-based, we need to explicitly tell the model where each token sits in the sequence. We learn another lookup table that maps position indices to vectors, then <em>add</em> these to the token embeddings. The key insight that initially confused me: how does adding positional embeddings to token embeddings not create collisions? The answer lies in the high dimensionality - with embedding vectors of length 768, the probability of collision becomes vanishingly small. This is similar to how CRISPR achieved precision in gene editing: while earlier techniques used shorter recognition sequences (higher collision risk), CRISPR uses ~20-nucleotide guide sequences, making the probability of accidentally matching the wrong genomic location negligibly small. </p>
 
         <h5>4. Attention Mechanism: Intelligent Information Routing</h5>
-        <p>This is where the magic happens. For each token, the model computes three vectors: Query (what am I looking for?), Key (what do I contain?), and Value (what information should I pass along?). The similarity between Query and Key vectors determines how much attention each token pays to every other token in the sequence. (During implementation, I discovered that Einstein summation order doesn't affect the results—a satisfying confirmation that dot product commutativity holds even in these complex operations.)</p>
+        <p>This is where the magic happens. For each token, the model computes three vectors: Query (what am I looking for?), Key (what do I contain?), and Value (what information should I pass along?). The similarity between Query and Key vectors determines how much attention each token pays to every other token in the sequence. (During implementation, I discovered that the order of performing Einstein summation operations within each dot product doesn't affect the results—in retrospect it makes total sense because of commutativity and associativity, but it was a little fun moment.)</p>
 	<p>**Note: In decoder-only transformers like GPT-2, this is specifically self-attention - each token attends to other tokens within the same sequence. This differs from encoder-decoder architectures (like the original Transformer) which also include cross-attention, where decoder tokens attend to encoder representations. Since we have no separate encoder, all attention is self-attention.**</p>
 	
         <p><strong>Multi-Head Attention:</strong> Rather than having one attention mechanism, transformers use multiple "heads" (12 in GPT-2) that attend to different types of information simultaneously. Each head can specialize - one might focus on syntactic relationships, another on semantic meaning. It's like having multiple experts each contributing their specialized perspective.</p>
-        
 
-<p><strong>Causal Attention:</strong> In GPT-style models, we use what's called "causal attention" - though I find this term somewhat misleading from a physicist's perspective. While there's a notion of sequence, there's no true temporal causality. Instead, it's a masking mechanism that prevents tokens from <em>seeing</em> later tokens in sequence, maintaining the sequential prediction task. This is analogous to preventing data leakage in ML (where future information accidentally gets into training features) or blinding in experimental physics (where researchers are kept unaware of group assignments to prevent bias). All three techniques share the same core principle: controlling information flow to maintain the integrity of the process.</p>
+	<p><strong>Causal Attention:</strong> In GPT-style models, we use what's called "causal attention" - though I find this term somewhat misleading from a physicist's perspective. While there's a notion of sequence, there's no true temporal causality. Instead, it's a masking mechanism that prevents tokens from <em>seeing</em> later tokens in sequence, maintaining the sequential prediction task. This is analogous to preventing data leakage in ML (where future information accidentally gets into training features) or blinding in experimental physics (where researchers are kept unaware of group assignments to prevent bias). All three techniques share the same core principle: controlling information flow to maintain the integrity of the process.</p>
 
+	<p><strong>The Complete Attention Process:</strong> The mechanism follows six precise steps: (1) compute Query, Key, and Value vectors by applying learned linear transformations to the input embeddings, (2) calculate raw attention scores by computing dot products between each Query and every Key vector, (3) scale these scores to prevent extremely large values, (4) apply the causal mask to set future positions to negative infinity (preventing information leakage), (5) convert masked scores to probabilities using softmax, and (6) compute the weighted sum of Value vectors using these probabilities, then apply a final linear transformation to produce the output that gets added back to the residual stream.</p>
+
+	
         <h5>5. MLP Layer: Pattern Recognition and Computation</h5>
 	<p>Despite the confusing name "multi-layer perceptron," these are actually simple two-layer feed-forward networks: expand the dimensionality (768 → 3072), apply non-linearity (GELU activation), then contract back (3072 → 768). The expansion (768 → 3072) creates finer granularity by providing more "working space" for complex transformations. The GELU non-linearity then selectively activates different pathways, creating pattern recognition. The contraction (3072 → 768) distills all this rich intermediate computation back into the residual stream format, essentially summarizing the complex high-dimensional processing into a form that can be added back to the information highway. </p>
 
@@ -332,7 +353,7 @@
 
       
       <!-- Section 4: Research Questions -->
-      <div class="section-header">
+      <div class="section-header" id="research-questions">
         <h2>4. So What?: Physics-Inspired Open Questions</h2>
       </div>
       <p>The following research directions reflect physics-informed perspectives and open questions that I have developed during my exploration; while they may overlap with prior work, I believe they highlight useful angles for further investigation.</p>
@@ -340,39 +361,53 @@
       <div class="subsection">
         <h3>Potential Research Directions</h3>
 
-	<h4>Physics-Inspired Frameworks</h4>
+	<h4>Group Theory for Neural Circuits</h4>
 	<p>Could we apply group theory (successfully used to organize the "particle zoo" in the 1950s-60s) to systematically group neural circuit patterns for better interpretability? Just as group theory revealed underlying symmetries that organized seemingly random hadrons into the Eightfold Way and eventually led to the quark model, similar mathematical frameworks might help classify the multitude of neural network pathways and patterns.</p>
 
 	<h4>Many-Body Neural Systems</h4>
-	<p>While we understand individual neurons, understanding group behavior remains elusive - reminiscent of the reductionist vs. holistic challenge in physics. Statistical mechanics deals with many-body systems and emergent laws. Could these approaches better explain neural network behavior than trying to understand individual components?</p>
+	<p>While we understand individual neurons, understanding group behavior remains elusive - reminiscent of the reductionist vs. holistic challenge in physics. Statistical mechanics deals with many-body systems and macroscopic properties. Could these approaches better explain neural network behavior than trying to understand individual components?</p>
+
+	<h4>Scaling Laws Meet Phase Transitions</h4>
+	<p>The sharp, discontinuous emergence of new abilities at critical model scales resembles phase transitions in physics, where smooth parameter changes trigger sudden qualitative shifts. This apparent paradox with smooth scaling laws mirrors how underlying variables (like temperature) change gradually while observable properties (like magnetization) change abruptly at critical points. Could identifying the neural equivalents of critical mass phenomena help predict emergence thresholds, or do we need frameworks that unify both gradual scaling improvements and sharp qualitative transitions in AI systems?</p>
 	
-	<h4>Scaling Laws as Phase Transitions</h4>
-	<p>Do scaling laws in neural networks correspond to phase transitions observed in physics? Certain phenomena require critical mass (like star formation) - what are the analogous thresholds in neural systems where large numbers create qualitatively different behavior?</p>
       </div>
 
       <div class="subsection">
         <h3>Methodological Questions</h3>
         <!--<p>[Fill in: Questions about experimental design, measurement, analysis approaches that could benefit from physics thinking]</p>-->
+	
+	<h4>Measurement-Driven Discovery</h4>
+	<p>I've learned that many breakthroughs in brain science emerged from defining precise measurable quantities. Karl Friston's free energy principle exemplifies this pattern—by mathematically defining free energy as an information-theoretic quantity, he unified previously separate theories under one measurable framework <a href="#ref-friston-fep" class="citation">[4]</a>. Similarly, Geoffrey Hinton's work at University of Toronto applied Boltzmann distributions from statistical mechanics to create breakthrough AI architectures, recently recognized with the 2024 Nobel Prize in Physics <a href="#ref-hinton-nobel" class="citation">[5]</a>.
+	  <!--
+	Brain science continues advancing through better quantification, especially in consciousness research where <strong>Marcello Massimini's Perturbational Complexity Index (PCI)</strong> achieves 100% accuracy in distinguishing conscious from unconscious states <a href="#ref-massimini-pci" class="citation">[6]</a>, and <strong>Giulio Tononi's Integrated Information Theory</strong> defines Φ (Phi) as a measurable consciousness quantity <a href="#ref-tononi-iit" class="citation">[7]</a>.
+	  -->
+	  This pattern suggests we should think more systematically about what transformative measurable quantities might be waiting to be defined in AI interpretability research.</p>
+	
 	<h4>Measurement Strategy</h4>
-	<p>From an experimental physicist's perspective, <em>what</em> we measure is critical. Is loss really the best metric, or should we focus on token probabilities or layer weights? How do we systematically measure emergent behavior with scaling? With so many variables to experiment on, how can we quickly and systematically group or reduce them?</p>
+	<p>Also, from an experimental physicist's perspective, <em>what</em> we measure is critical. While cross-entropy loss is optimized for training, is it actually the best way to understand model behavior? Should we measure raw token probabilities, perplexity, or calibration metrics instead of loss? Beyond probability measures, should we also focus on attention patterns, activation magnitudes, or gradient flows? How do we systematically measure emergent behavior with scaling? With so many measurable variables, how can we efficiently extract the high-level patterns that capture the most meaningful information?</p>
 
-	<h4>Uncertainty vs. Deterministic Classification</h4>
+	<h4>Bayesian Approaches to Interpretability</h4>
 	<p>Physics emphasizes precise measurements with quantified uncertainties, while industry ML often defaults to deterministic outputs. Given that the human brain operates as a Bayesian inference engine—continuously updating beliefs from limited evidence—should interpretability research embrace more explicitly Bayesian frameworks? This could be particularly valuable for understanding how transformers handle infrequent but critical decisions where we can't gather sufficient statistics, similar to how humans make consequential life choices without the luxury of controlled trials.</p>
 
-	<h4>Brain Science vs. Mathematical Approaches</h4>
-	<p>Given that neural networks aim to emulate brains, shouldn't we leverage brain science approaches more heavily? (More detailed explantion need to be added)</p>
+
       </div>
 
       <div class="subsection">
         <h3>Fundamental Puzzles</h3>
 	<h4>Grounded vs. Abstract Meaning</h4>
-	<p>Neural networks feel more mathematical than physical - in physics, information has specific meaning (e.g., particle spin states in wave functions correspond to measurable angular momentum), but in ML, any numerical representation is valid as long as it's useful for the task. Why should certain neuron firing patterns have inherent meaning? This fundamental question about the nature of representation needs addressing.</p>
+	<p>Neural networks feel more mathematical than physical - in physics, information has specific meaning (e.g., particle spin states in wave functions correspond to measurable angular momentum), but in ML, any numerical representation is valid as long as it's useful for the task. Does certain neuron firing patterns have inherent meaning? This fundamental question about the nature of representation needs addressing.</p>
 
 
 	<h4>In-Context Learning</h4>
-	<p>How does transformer in-context learning compare to human rapid adaptation? The ability to change behavior without parameter updates seems more like pattern recognition than true learning—what can neuroscience tell us about this distinction?</p>
+	<p>How does transformer in-context learning compare to human rapid adaptation? The ability to change behavior without parameter updates seems more like pattern recognition than true learning—what can brain science tell us about this distinction?</p>
       </div>
 
+        <div class="subsection">
+          <h3>Thoughts Under Fermentation</h3>
+	  <h4>Residual Stream Design Choice</h4>
+	  <p>The linear additivity of residual streams makes interpretability possible. This seems to be a good choice, but I wonder if there are any other structural ways to allow interpretability more easily with different design setups.</p>
+	</div>
+	
       <!-- Section 5: Reflection & Next Steps 
       <div class="section-header">
         <h2>5. Reflection: What This Process Taught Me</h2>
@@ -397,29 +432,57 @@
       <!-- Appendix -->
       <div class="section-header">
 	<h2>Appendix</h2>
-	<div class="insight-box">
-	  <p>[<em>As of 2025-08-17, this section is incomplete. Needs to be updated.</em>]</p>
-	</div>
     
 	<!-- Add References as first subsection -->
 	<h3>References</h3>
 	<ol>
+	  <li id="ref-park-talentcode">
+	    지식 인사이드. "20대로 돌아가면 이것부터 읽을 겁니다." 뇌과학으로 입증된 최고의 책 1권 (박문호 박사 1부). YouTube. 
+	    <a href="https://www.youtube.com/watch?v=79crR-kUGrI" target="_blank">https://www.youtube.com/watch?v=79crR-kUGrI</a>
+	  </li>
+	  <li id="ref-talent-code">
+	    Coyle, Daniel. <em>The Talent Code: Greatness Isn't Born. It's Grown. Here's How.</em> Bantam, 2009.
+	  </li>
 	  <li id="ref-radford2019">
             Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., & Sutskever, I. (2019). 
             <em>Language Models are Unsupervised Multitask Learners</em>. OpenAI. 
             <a href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf" target="_blank">PDF</a>
 	  </li>
+	  <li id="ref-friston-fep">
+	    Friston, K. (2010). The free-energy principle: a unified brain theory? <em>Nature Reviews Neuroscience</em>, 11(2), 127-138.
+	  </li>
+	  <li id="ref-hinton-nobel">
+	    The Nobel Prize in Physics 2024. <em>NobelPrize.org</em>. <a href="https://www.nobelprize.org/prizes/physics/2024/press-release/" target="_blank">Press Release</a>
+	  </li>
+	  <li id="ref-massimini-pci">
+	    Casali, A. G., et al. (2013). A theoretically based index of consciousness independent of sensory processing and behavior. <em>Science Translational Medicine</em>, 5(198), 198ra105.
+	  </li>
+	  <li id="ref-tononi-iit">
+	    Tononi, G. (2008). Integrated information theory. <em>Scholarpedia</em>, 3(3), 4164.
+	  </li>
+	  
 	  <!-- Add other references as needed -->
 	</ol>
-    
-	<h3>Tools and Resources</h3>
-	<h3 id="learning-process-example">Example: Applying My Six-Step Learning Process</h3>
 
+	<!--
+	    <h3>Tools and Resources</h3>
+	-->	    
+	<h3 id="learning-process-example">Example: Applying My Six-Step Learning Process</h3>
+	<div class="insight-box">
+	  <p>[<em>To be updated.</em>]</p>
+	</div>
+
+	
 	<!-- Footer -->
 	<div class="starter-template">
 	  <hr>
 	  <p class="text-center">
-	    <a href="projects.html" class="btn btn-default">← Back to Projects</a>
+	    <a href="#" class="btn btn-default">
+	      <span class="glyphicon glyphicon-arrow-up"></span> Back to Top
+	    </a>
+	    <a href="projects.html" class="btn btn-default">
+	      <span class="glyphicon glyphicon-arrow-left"></span> Back to Projects
+	    </a>
 	  </p>
 	  <p class="text-center">
 	    Questions about this research? Find me on
